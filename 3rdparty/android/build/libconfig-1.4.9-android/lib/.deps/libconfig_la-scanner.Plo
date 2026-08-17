@@ -1,0 +1,119 @@
+libconfig_la-scanner.lo: scanner.c \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/stdio.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/sys/cdefs.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/sys/cdefs_elf.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/android/api-level.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/sys/types.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/lib/gcc/aarch64-linux-android/4.9.x/include/stddef.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/lib/gcc/aarch64-linux-android/4.9.x/include/stdint.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/stdint.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/machine/wchar_limits.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/linux/types.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm/types.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/types.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/int-ll64.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm/bitsperlong.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/bitsperlong.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/linux/posix_types.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/linux/stddef.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/linux/compiler.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm/posix_types.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/posix_types.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/sys/sysmacros.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/lib/gcc/aarch64-linux-android/4.9.x/include/stdarg.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/string.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/malloc.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/xlocale.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/errno.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/linux/errno.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm/errno.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/errno.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/errno-base.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/stdlib.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/alloca.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/strings.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/memory.h \
+ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/ctype.h \
+ grammar.h wincompat.h parsectx.h libconfig.h strbuf.h scanctx.h
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/stdio.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/sys/cdefs.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/sys/cdefs_elf.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/android/api-level.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/sys/types.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/lib/gcc/aarch64-linux-android/4.9.x/include/stddef.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/lib/gcc/aarch64-linux-android/4.9.x/include/stdint.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/stdint.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/machine/wchar_limits.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/linux/types.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm/types.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/types.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/int-ll64.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm/bitsperlong.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/bitsperlong.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/linux/posix_types.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/linux/stddef.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/linux/compiler.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm/posix_types.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/posix_types.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/sys/sysmacros.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/lib/gcc/aarch64-linux-android/4.9.x/include/stdarg.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/string.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/malloc.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/xlocale.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/errno.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/linux/errno.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm/errno.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/errno.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/asm-generic/errno-base.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/stdlib.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/alloca.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/strings.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/memory.h:
+
+/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/sysroot/usr/include/ctype.h:
+
+grammar.h:
+
+wincompat.h:
+
+parsectx.h:
+
+libconfig.h:
+
+strbuf.h:
+
+scanctx.h:

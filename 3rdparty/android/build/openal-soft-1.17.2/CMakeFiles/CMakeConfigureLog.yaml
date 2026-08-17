@@ -1,0 +1,857 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:5 (PROJECT)"
+    message: |
+      The system is: Linux - 6.14.8-061408-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (PROJECT)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc 
+      Build flags: -g;-DANDROID;-fdata-sections;-ffunction-sections;-funwind-tables;-fstack-protector-strong;-no-canonical-prefixes;-D_FORTIFY_SOURCE=2;-Wformat;-Werror=format-security;-O3;-DNDEBUG;-fPIC;--target=aarch64-linux-android21;--sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64
+      Id flags:  
+      
+      The output was:
+      0
+      cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/3.28.3/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (PROJECT)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld: cannot find crtbegin_dynamic.o: No such file or directory
+      /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld: cannot find -lstdc++
+      /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld: cannot find -lm
+      /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld: cannot find -lc
+      /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld: cannot find -ldl
+      /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld: cannot find crtend_android.o: No such file or directory
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (PROJECT)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++ 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (PROJECT)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-YpUDTr"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-YpUDTr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-YpUDTr'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6b28e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6b28e.dir/build.make CMakeFiles/cmTC_6b28e.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-YpUDTr'
+        Building C object CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64    -v -o CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc
+        Target: aarch64-linux-android
+        Configured with: /usr/local/google/buildbot/src/android/gcc/toolchain/build/../gcc/gcc-4.9/configure --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --target=aarch64-linux-android --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/buildbot/tmp/build/toolchain/temp-install --with-mpfr=/buildbot/tmp/build/toolchain/temp-install --with-mpc=/buildbot/tmp/build/toolchain/temp-install --with-cloog=/buildbot/tmp/build/toolchain/temp-install --with-isl=/buildbot/tmp/build/toolchain/temp-install --with-ppl=/buildbot/tmp/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --enable-bionic-libs --enable-libatomic-ifuncs=no --enable-initfini-array --disable-nls --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --with-sysroot=/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=none --with-gxx-include-dir=/tmp/8ee0b8157b3409c4b84fff35696d6c90/include/c++/4.9.x --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-ld=default --enable-threads --enable-eh-frame-hdr-for-static --enable-fix-cortex-a53-835769 --enable-graphite=yes --with-isl-version=0.11.1 --with-cloog-version=0.18.0 --program-transform-name='s&^&aarch64-linux-android-&' --enable-gold
+        Thread model: posix
+        gcc version 4.9.x 20150123 (prerelease) (GCC) 
+        COLLECT_GCC_OPTIONS='-g' '-D' 'ANDROID' '-fdata-sections' '-ffunction-sections' '-funwind-tables' '-fstack-protector-strong' '-D' '_FORTIFY_SOURCE=2' '-Wformat=1' '-O3' '-D' 'NDEBUG' '-fPIC' '-ftarget=aarch64-linux-android21' '-v' '-o' 'CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
+         /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/cc1 -quiet -v -iprefix /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/ -isysroot /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64 -D ANDROID -D _FORTIFY_SOURCE=2 -D NDEBUG /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -mbionic -quiet -dumpbase CMakeCCompilerABI.c -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o -g -O3 -Wformat=1 -version -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -fPIC -ftarget=aarch64-linux-android21 -o /tmp/ccubr74P.s
+        cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+        GNU C (GCC) version 4.9.x 20150123 (prerelease) (aarch64-linux-android)
+        	compiled by GNU C version 4.8, GMP version 5.0.5, MPFR version 3.1.1, MPC version 1.0.1
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/include"
+        ignoring duplicate directory "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/include"
+        ignoring nonexistent directory "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/local/include"
+        ignoring duplicate directory "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/include-fixed"
+        ignoring nonexistent directory "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include
+         /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include-fixed
+         /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/include
+        End of search list.
+        GNU C (GCC) version 4.9.x 20150123 (prerelease) (aarch64-linux-android)
+        	compiled by GNU C version 4.8, GMP version 5.0.5, MPFR version 3.1.1, MPC version 1.0.1
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: a7ae93b49a1432b133d6e1af8528d8ab
+        COLLECT_GCC_OPTIONS='-g' '-D' 'ANDROID' '-fdata-sections' '-ffunction-sections' '-funwind-tables' '-fstack-protector-strong' '-D' '_FORTIFY_SOURCE=2' '-Wformat=1' '-O3' '-D' 'NDEBUG' '-fPIC' '-ftarget=aarch64-linux-android21' '-v' '-o' 'CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
+         /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o /tmp/ccubr74P.s
+        GNU assembler version 2.25.51 (aarch64-linux-android) using BFD version (binutils-2.25-0666073) 2.25.51.20141117
+        COMPILER_PATH=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/
+        LIBRARY_PATH=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/
+        COLLECT_GCC_OPTIONS='-g' '-D' 'ANDROID' '-fdata-sections' '-ffunction-sections' '-funwind-tables' '-fstack-protector-strong' '-D' '_FORTIFY_SOURCE=2' '-Wformat=1' '-O3' '-D' 'NDEBUG' '-fPIC' '-ftarget=aarch64-linux-android21' '-v' '-o' 'CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64'
+        Linking C executable cmTC_6b28e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6b28e.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64 -v -rdynamic CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o -o cmTC_6b28e 
+        Using built-in specs.
+        COLLECT_GCC=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc
+        COLLECT_LTO_WRAPPER=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/lto-wrapper
+        Target: aarch64-linux-android
+        Configured with: /usr/local/google/buildbot/src/android/gcc/toolchain/build/../gcc/gcc-4.9/configure --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --target=aarch64-linux-android --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/buildbot/tmp/build/toolchain/temp-install --with-mpfr=/buildbot/tmp/build/toolchain/temp-install --with-mpc=/buildbot/tmp/build/toolchain/temp-install --with-cloog=/buildbot/tmp/build/toolchain/temp-install --with-isl=/buildbot/tmp/build/toolchain/temp-install --with-ppl=/buildbot/tmp/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --enable-bionic-libs --enable-libatomic-ifuncs=no --enable-initfini-array --disable-nls --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --with-sysroot=/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=none --with-gxx-include-dir=/tmp/8ee0b8157b3409c4b84fff35696d6c90/include/c++/4.9.x --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-ld=default --enable-threads --enable-eh-frame-hdr-for-static --enable-fix-cortex-a53-835769 --enable-graphite=yes --with-isl-version=0.11.1 --with-cloog-version=0.18.0 --program-transform-name='s&^&aarch64-linux-android-&' --enable-gold
+        Thread model: posix
+        gcc version 4.9.x 20150123 (prerelease) (GCC) 
+        COMPILER_PATH=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/
+        LIBRARY_PATH=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/
+        COLLECT_GCC_OPTIONS='-g' '-D' 'ANDROID' '-fdata-sections' '-ffunction-sections' '-funwind-tables' '-fstack-protector-strong' '-D' '_FORTIFY_SOURCE=2' '-Wformat=1' '-O3' '-D' 'NDEBUG' '-fPIC' '-ftarget=aarch64-linux-android21' '-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib' '-v' '-rdynamic' '-o' 'cmTC_6b28e' '-mlittle-endian' '-mabi=lp64'
+         /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/collect2 -plugin /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/liblto_plugin.so -plugin-opt=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHe35mG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64 --eh-frame-hdr -export-dynamic -dynamic-linker /system/bin/linker64 -X -EL -maarch64linux --fix-cortex-a53-835769 --fix-cortex-a53-843419 -z noexecstack -z relro -z now -o cmTC_6b28e /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o -lgcc -lc -ldl -lgcc /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtend_android.o
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-YpUDTr'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (PROJECT)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include]
+          add: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include-fixed]
+          add: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/include]
+        end of search list found
+        collapse include dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/include]
+        collapse include dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include-fixed] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/include-fixed]
+        collapse include dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/include] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/include]
+        implicit include dirs: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/include;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/include-fixed;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (PROJECT)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(aarch64-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-YpUDTr']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6b28e/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_6b28e.dir/build.make CMakeFiles/cmTC_6b28e.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-YpUDTr']
+        ignore line: [Building C object CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64    -v -o CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc]
+        ignore line: [Target: aarch64-linux-android]
+        ignore line: [Configured with: /usr/local/google/buildbot/src/android/gcc/toolchain/build/../gcc/gcc-4.9/configure --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --target=aarch64-linux-android --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/buildbot/tmp/build/toolchain/temp-install --with-mpfr=/buildbot/tmp/build/toolchain/temp-install --with-mpc=/buildbot/tmp/build/toolchain/temp-install --with-cloog=/buildbot/tmp/build/toolchain/temp-install --with-isl=/buildbot/tmp/build/toolchain/temp-install --with-ppl=/buildbot/tmp/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --enable-bionic-libs --enable-libatomic-ifuncs=no --enable-initfini-array --disable-nls --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --with-sysroot=/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=none --with-gxx-include-dir=/tmp/8ee0b8157b3409c4b84fff35696d6c90/include/c++/4.9.x --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-ld=default --enable-threads --enable-eh-frame-hdr-for-static --enable-fix-cortex-a53-835769 --enable-graphite=yes --with-isl-version=0.11.1 --with-cloog-version=0.18.0 --program-transform-name='s&^&aarch64-linux-android-&' --enable-gold]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 4.9.x 20150123 (prerelease) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-g' '-D' 'ANDROID' '-fdata-sections' '-ffunction-sections' '-funwind-tables' '-fstack-protector-strong' '-D' '_FORTIFY_SOURCE=2' '-Wformat=1' '-O3' '-D' 'NDEBUG' '-fPIC' '-ftarget=aarch64-linux-android21' '-v' '-o' 'CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
+        ignore line: [ /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/cc1 -quiet -v -iprefix /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/ -isysroot /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64 -D ANDROID -D _FORTIFY_SOURCE=2 -D NDEBUG /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -mbionic -quiet -dumpbase CMakeCCompilerABI.c -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o -g -O3 -Wformat=1 -version -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -fPIC -ftarget=aarch64-linux-android21 -o /tmp/ccubr74P.s]
+        ignore line: [cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C]
+        ignore line: [GNU C (GCC) version 4.9.x 20150123 (prerelease) (aarch64-linux-android)]
+        ignore line: [	compiled by GNU C version 4.8  GMP version 5.0.5  MPFR version 3.1.1  MPC version 1.0.1]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/include"]
+        ignore line: [ignoring duplicate directory "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/include"]
+        ignore line: [ignoring nonexistent directory "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include]
+        ignore line: [ /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include-fixed]
+        ignore line: [ /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C (GCC) version 4.9.x 20150123 (prerelease) (aarch64-linux-android)]
+        ignore line: [	compiled by GNU C version 4.8  GMP version 5.0.5  MPFR version 3.1.1  MPC version 1.0.1]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: a7ae93b49a1432b133d6e1af8528d8ab]
+        ignore line: [COLLECT_GCC_OPTIONS='-g' '-D' 'ANDROID' '-fdata-sections' '-ffunction-sections' '-funwind-tables' '-fstack-protector-strong' '-D' '_FORTIFY_SOURCE=2' '-Wformat=1' '-O3' '-D' 'NDEBUG' '-fPIC' '-ftarget=aarch64-linux-android21' '-v' '-o' 'CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
+        ignore line: [ /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o /tmp/ccubr74P.s]
+        ignore line: [GNU assembler version 2.25.51 (aarch64-linux-android) using BFD version (binutils-2.25-0666073) 2.25.51.20141117]
+        ignore line: [COMPILER_PATH=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/]
+        ignore line: [LIBRARY_PATH=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-g' '-D' 'ANDROID' '-fdata-sections' '-ffunction-sections' '-funwind-tables' '-fstack-protector-strong' '-D' '_FORTIFY_SOURCE=2' '-Wformat=1' '-O3' '-D' 'NDEBUG' '-fPIC' '-ftarget=aarch64-linux-android21' '-v' '-o' 'CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o' '-c' '-mlittle-endian' '-mabi=lp64']
+        ignore line: [Linking C executable cmTC_6b28e]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6b28e.dir/link.txt --verbose=1]
+        ignore line: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64 -v -rdynamic CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o -o cmTC_6b28e ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc]
+        ignore line: [COLLECT_LTO_WRAPPER=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/lto-wrapper]
+        ignore line: [Target: aarch64-linux-android]
+        ignore line: [Configured with: /usr/local/google/buildbot/src/android/gcc/toolchain/build/../gcc/gcc-4.9/configure --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --target=aarch64-linux-android --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/buildbot/tmp/build/toolchain/temp-install --with-mpfr=/buildbot/tmp/build/toolchain/temp-install --with-mpc=/buildbot/tmp/build/toolchain/temp-install --with-cloog=/buildbot/tmp/build/toolchain/temp-install --with-isl=/buildbot/tmp/build/toolchain/temp-install --with-ppl=/buildbot/tmp/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --enable-bionic-libs --enable-libatomic-ifuncs=no --enable-initfini-array --disable-nls --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --with-sysroot=/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=none --with-gxx-include-dir=/tmp/8ee0b8157b3409c4b84fff35696d6c90/include/c++/4.9.x --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-ld=default --enable-threads --enable-eh-frame-hdr-for-static --enable-fix-cortex-a53-835769 --enable-graphite=yes --with-isl-version=0.11.1 --with-cloog-version=0.18.0 --program-transform-name='s&^&aarch64-linux-android-&' --enable-gold]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 4.9.x 20150123 (prerelease) (GCC) ]
+        ignore line: [COMPILER_PATH=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/]
+        ignore line: [LIBRARY_PATH=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-g' '-D' 'ANDROID' '-fdata-sections' '-ffunction-sections' '-funwind-tables' '-fstack-protector-strong' '-D' '_FORTIFY_SOURCE=2' '-Wformat=1' '-O3' '-D' 'NDEBUG' '-fPIC' '-ftarget=aarch64-linux-android21' '-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib' '-v' '-rdynamic' '-o' 'cmTC_6b28e' '-mlittle-endian' '-mabi=lp64']
+        link line: [ /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/collect2 -plugin /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/liblto_plugin.so -plugin-opt=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHe35mG.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64 --eh-frame-hdr -export-dynamic -dynamic-linker /system/bin/linker64 -X -EL -maarch64linux --fix-cortex-a53-835769 --fix-cortex-a53-843419 -z noexecstack -z relro -z now -o cmTC_6b28e /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o -lgcc -lc -ldl -lgcc /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
+          arg [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccHe35mG.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-ldl] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-export-dynamic] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/system/bin/linker64] ==> ignore
+          arg [-X] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-maarch64linux] ==> ignore
+          arg [--fix-cortex-a53-835769] ==> ignore
+          arg [--fix-cortex-a53-843419] ==> ignore
+          arg [-znoexecstack] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_6b28e] ==> ignore
+          arg [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o] ==> obj [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o]
+          arg [-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib] ==> dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib]
+          arg [-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x] ==> dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x]
+          arg [-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc]
+          arg [-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64]
+          arg [-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib]
+          arg [-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib] ==> dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib]
+          arg [-lc] ==> lib [c]
+          arg [-ldl] ==> lib [dl]
+          arg [CMakeFiles/cmTC_6b28e.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-ldl] ==> lib [dl]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtend_android.o] ==> obj [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
+        collapse library dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib]
+        collapse library dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+        collapse library dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc]
+        collapse library dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib64]
+        collapse library dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib]
+        collapse library dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib]
+        implicit libs: [c;dl;gcc;c;dl;gcc]
+        implicit objs: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
+        implicit dirs: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib64;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (PROJECT)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-OFFmds"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-OFFmds"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-OFFmds'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b6904/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b6904.dir/build.make CMakeFiles/cmTC_b6904.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-OFFmds'
+        Building CXX object CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++   -v -o CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++
+        Target: aarch64-linux-android
+        Configured with: /usr/local/google/buildbot/src/android/gcc/toolchain/build/../gcc/gcc-4.9/configure --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --target=aarch64-linux-android --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/buildbot/tmp/build/toolchain/temp-install --with-mpfr=/buildbot/tmp/build/toolchain/temp-install --with-mpc=/buildbot/tmp/build/toolchain/temp-install --with-cloog=/buildbot/tmp/build/toolchain/temp-install --with-isl=/buildbot/tmp/build/toolchain/temp-install --with-ppl=/buildbot/tmp/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --enable-bionic-libs --enable-libatomic-ifuncs=no --enable-initfini-array --disable-nls --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --with-sysroot=/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=none --with-gxx-include-dir=/tmp/8ee0b8157b3409c4b84fff35696d6c90/include/c++/4.9.x --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-ld=default --enable-threads --enable-eh-frame-hdr-for-static --enable-fix-cortex-a53-835769 --enable-graphite=yes --with-isl-version=0.11.1 --with-cloog-version=0.18.0 --program-transform-name='s&^&aarch64-linux-android-&' --enable-gold
+        Thread model: posix
+        gcc version 4.9.x 20150123 (prerelease) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mlittle-endian' '-mabi=lp64'
+         /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/cc1plus -quiet -v -iprefix /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/ -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -mbionic -fpic -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o -version -fexceptions -frtti -o /tmp/cc81re6V.s
+        GNU C++ (GCC) version 4.9.x 20150123 (prerelease) (aarch64-linux-android)
+        	compiled by GNU C version 4.8, GMP version 5.0.5, MPFR version 3.1.1, MPC version 1.0.1
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/include"
+        ignoring nonexistent directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../include/c++/4.9.x"
+        ignoring nonexistent directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../include/c++/4.9.x/aarch64-linux-android"
+        ignoring nonexistent directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../include/c++/4.9.x/backward"
+        ignoring duplicate directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/include"
+        ignoring nonexistent directory "/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot/usr/local/include"
+        ignoring duplicate directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/include-fixed"
+        ignoring nonexistent directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/include"
+        ignoring nonexistent directory "/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot/usr/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include
+         /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include-fixed
+        End of search list.
+        GNU C++ (GCC) version 4.9.x 20150123 (prerelease) (aarch64-linux-android)
+        	compiled by GNU C version 4.8, GMP version 5.0.5, MPFR version 3.1.1, MPC version 1.0.1
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 6ca52d6d40deffde2cc0d2f0dbdde6bb
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mlittle-endian' '-mabi=lp64'
+         /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc81re6V.s
+        GNU assembler version 2.25.51 (aarch64-linux-android) using BFD version (binutils-2.25-0666073) 2.25.51.20141117
+        COMPILER_PATH=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/
+        LIBRARY_PATH=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mlittle-endian' '-mabi=lp64'
+        Linking CXX executable cmTC_b6904
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6904.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++ -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64 -v -rdynamic CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b6904 
+        Using built-in specs.
+        COLLECT_GCC=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++
+        COLLECT_LTO_WRAPPER=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/lto-wrapper
+        Target: aarch64-linux-android
+        Configured with: /usr/local/google/buildbot/src/android/gcc/toolchain/build/../gcc/gcc-4.9/configure --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --target=aarch64-linux-android --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/buildbot/tmp/build/toolchain/temp-install --with-mpfr=/buildbot/tmp/build/toolchain/temp-install --with-mpc=/buildbot/tmp/build/toolchain/temp-install --with-cloog=/buildbot/tmp/build/toolchain/temp-install --with-isl=/buildbot/tmp/build/toolchain/temp-install --with-ppl=/buildbot/tmp/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --enable-bionic-libs --enable-libatomic-ifuncs=no --enable-initfini-array --disable-nls --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --with-sysroot=/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=none --with-gxx-include-dir=/tmp/8ee0b8157b3409c4b84fff35696d6c90/include/c++/4.9.x --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-ld=default --enable-threads --enable-eh-frame-hdr-for-static --enable-fix-cortex-a53-835769 --enable-graphite=yes --with-isl-version=0.11.1 --with-cloog-version=0.18.0 --program-transform-name='s&^&aarch64-linux-android-&' --enable-gold
+        Thread model: posix
+        gcc version 4.9.x 20150123 (prerelease) (GCC) 
+        COMPILER_PATH=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/
+        LIBRARY_PATH=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/
+        COLLECT_GCC_OPTIONS='-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib' '-v' '-rdynamic' '-o' 'cmTC_b6904' '-mlittle-endian' '-mabi=lp64'
+         /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/collect2 -plugin /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/liblto_plugin.so -plugin-opt=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/lto-wrapper -plugin-opt=-fresolution=/tmp/ccobWonw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64 --eh-frame-hdr -export-dynamic -dynamic-linker /system/bin/linker64 -X -EL -maarch64linux --fix-cortex-a53-835769 --fix-cortex-a53-843419 -z noexecstack -z relro -z now -o cmTC_b6904 /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x -L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -ldl CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lc -lgcc -lc -ldl -lgcc /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtend_android.o
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-OFFmds'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (PROJECT)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include]
+          add: [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include-fixed]
+        end of search list found
+        collapse include dir [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/include]
+        collapse include dir [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include-fixed] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/include-fixed]
+        implicit include dirs: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/include;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/include-fixed]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (PROJECT)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(aarch64-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-OFFmds']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b6904/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_b6904.dir/build.make CMakeFiles/cmTC_b6904.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-OFFmds']
+        ignore line: [Building CXX object CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++   -v -o CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++]
+        ignore line: [Target: aarch64-linux-android]
+        ignore line: [Configured with: /usr/local/google/buildbot/src/android/gcc/toolchain/build/../gcc/gcc-4.9/configure --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --target=aarch64-linux-android --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/buildbot/tmp/build/toolchain/temp-install --with-mpfr=/buildbot/tmp/build/toolchain/temp-install --with-mpc=/buildbot/tmp/build/toolchain/temp-install --with-cloog=/buildbot/tmp/build/toolchain/temp-install --with-isl=/buildbot/tmp/build/toolchain/temp-install --with-ppl=/buildbot/tmp/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --enable-bionic-libs --enable-libatomic-ifuncs=no --enable-initfini-array --disable-nls --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --with-sysroot=/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=none --with-gxx-include-dir=/tmp/8ee0b8157b3409c4b84fff35696d6c90/include/c++/4.9.x --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-ld=default --enable-threads --enable-eh-frame-hdr-for-static --enable-fix-cortex-a53-835769 --enable-graphite=yes --with-isl-version=0.11.1 --with-cloog-version=0.18.0 --program-transform-name='s&^&aarch64-linux-android-&' --enable-gold]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 4.9.x 20150123 (prerelease) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mlittle-endian' '-mabi=lp64']
+        ignore line: [ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/cc1plus -quiet -v -iprefix /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/ -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -mbionic -fpic -quiet -dumpbase CMakeCXXCompilerABI.cpp -mlittle-endian -mabi=lp64 -auxbase-strip CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o -version -fexceptions -frtti -o /tmp/cc81re6V.s]
+        ignore line: [GNU C++ (GCC) version 4.9.x 20150123 (prerelease) (aarch64-linux-android)]
+        ignore line: [	compiled by GNU C version 4.8  GMP version 5.0.5  MPFR version 3.1.1  MPC version 1.0.1]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/include"]
+        ignore line: [ignoring nonexistent directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../include/c++/4.9.x"]
+        ignore line: [ignoring nonexistent directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../include/c++/4.9.x/aarch64-linux-android"]
+        ignore line: [ignoring nonexistent directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../include/c++/4.9.x/backward"]
+        ignore line: [ignoring duplicate directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/include"]
+        ignore line: [ignoring nonexistent directory "/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/../../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/include"]
+        ignore line: [ignoring nonexistent directory "/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot/usr/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include]
+        ignore line: [ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/include-fixed]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++ (GCC) version 4.9.x 20150123 (prerelease) (aarch64-linux-android)]
+        ignore line: [	compiled by GNU C version 4.8  GMP version 5.0.5  MPFR version 3.1.1  MPC version 1.0.1]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 6ca52d6d40deffde2cc0d2f0dbdde6bb]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mlittle-endian' '-mabi=lp64']
+        ignore line: [ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/as -v -EL -mabi=lp64 -o CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc81re6V.s]
+        ignore line: [GNU assembler version 2.25.51 (aarch64-linux-android) using BFD version (binutils-2.25-0666073) 2.25.51.20141117]
+        ignore line: [COMPILER_PATH=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/]
+        ignore line: [LIBRARY_PATH=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-mlittle-endian' '-mabi=lp64']
+        ignore line: [Linking CXX executable cmTC_b6904]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6904.dir/link.txt --verbose=1]
+        ignore line: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++ -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64 -v -rdynamic CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b6904 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/lto-wrapper]
+        ignore line: [Target: aarch64-linux-android]
+        ignore line: [Configured with: /usr/local/google/buildbot/src/android/gcc/toolchain/build/../gcc/gcc-4.9/configure --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --target=aarch64-linux-android --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/buildbot/tmp/build/toolchain/temp-install --with-mpfr=/buildbot/tmp/build/toolchain/temp-install --with-mpc=/buildbot/tmp/build/toolchain/temp-install --with-cloog=/buildbot/tmp/build/toolchain/temp-install --with-isl=/buildbot/tmp/build/toolchain/temp-install --with-ppl=/buildbot/tmp/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --enable-bionic-libs --enable-libatomic-ifuncs=no --enable-initfini-array --disable-nls --prefix=/tmp/8ee0b8157b3409c4b84fff35696d6c90 --with-sysroot=/tmp/8ee0b8157b3409c4b84fff35696d6c90/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=none --with-gxx-include-dir=/tmp/8ee0b8157b3409c4b84fff35696d6c90/include/c++/4.9.x --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-ld=default --enable-threads --enable-eh-frame-hdr-for-static --enable-fix-cortex-a53-835769 --enable-graphite=yes --with-isl-version=0.11.1 --with-cloog-version=0.18.0 --program-transform-name='s&^&aarch64-linux-android-&' --enable-gold]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 4.9.x 20150123 (prerelease) (GCC) ]
+        ignore line: [COMPILER_PATH=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/]
+        ignore line: [LIBRARY_PATH=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64/:/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/:/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib' '-v' '-rdynamic' '-o' 'cmTC_b6904' '-mlittle-endian' '-mabi=lp64']
+        link line: [ /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/collect2 -plugin /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/liblto_plugin.so -plugin-opt=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/lto-wrapper -plugin-opt=-fresolution=/tmp/ccobWonw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64 --eh-frame-hdr -export-dynamic -dynamic-linker /system/bin/linker64 -X -EL -maarch64linux --fix-cortex-a53-835769 --fix-cortex-a53-843419 -z noexecstack -z relro -z now -o cmTC_b6904 /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x -L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -ldl CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lc -lgcc -lc -ldl -lgcc /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
+          arg [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/aarch64-linux-android/4.9.x/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccobWonw.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-ldl] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-export-dynamic] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/system/bin/linker64] ==> ignore
+          arg [-X] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-maarch64linux] ==> ignore
+          arg [--fix-cortex-a53-835769] ==> ignore
+          arg [--fix-cortex-a53-843419] ==> ignore
+          arg [-znoexecstack] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_b6904] ==> ignore
+          arg [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o] ==> obj [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o]
+          arg [-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib] ==> dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib]
+          arg [-L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x] ==> dir [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x]
+          arg [-L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> dir [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc]
+          arg [-L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> dir [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64]
+          arg [-L/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> dir [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib]
+          arg [-L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib] ==> dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib]
+          arg [-ldl] ==> lib [dl]
+          arg [CMakeFiles/cmTC_b6904.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-ldl] ==> lib [dl]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtend_android.o] ==> obj [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
+        collapse library dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib]
+        collapse library dir [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+        collapse library dir [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc]
+        collapse library dir [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib64]
+        collapse library dir [/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib]
+        collapse library dir [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib] ==> [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib]
+        implicit libs: [dl;stdc++;m;c;gcc;c;dl;gcc]
+        implicit objs: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtbegin_dynamic.o;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib/crtend_android.o]
+        implicit dirs: [/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/lib/gcc;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib64;/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/aarch64-linux-android/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:34 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:84 (_record_compiler_features)"
+      - "/usr/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake:121 (_record_compiler_features_cxx)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake:70 (cmake_record_cxx_compile_features)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:70 (CMAKE_DETERMINE_COMPILE_FEATURES)"
+      - "CMakeLists.txt:5 (PROJECT)"
+    checks:
+      - "Detecting CXX compile features"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-1sggWB"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-1sggWB"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_FEATURE_TEST"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-1sggWB'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6f238/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6f238.dir/build.make CMakeFiles/cmTC_6f238.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-1sggWB'
+        Building CXX object CMakeFiles/cmTC_6f238.dir/feature_tests.cxx.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++   -std=c++14 -o CMakeFiles/cmTC_6f238.dir/feature_tests.cxx.o -c /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-1sggWB/feature_tests.cxx
+        Linking CXX executable cmTC_6f238
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6f238.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-c++ -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -rdynamic CMakeFiles/cmTC_6f238.dir/feature_tests.cxx.o -o cmTC_6f238 
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-1sggWB'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:250 (check_include_file)"
+      - "CMakeLists.txt:93 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Rd4KA7"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Rd4KA7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64"
+      CMAKE_MODULE_PATH: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/cmake"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Rd4KA7'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c7665/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c7665.dir/build.make CMakeFiles/cmTC_c7665.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Rd4KA7'
+        Building C object CMakeFiles/cmTC_c7665.dir/CheckIncludeFile.c.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -o CMakeFiles/cmTC_c7665.dir/CheckIncludeFile.c.o -c /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Rd4KA7/CheckIncludeFile.c
+        cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+        Linking C executable cmTC_c7665
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7665.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -rdynamic CMakeFiles/cmTC_c7665.dir/CheckIncludeFile.c.o -o cmTC_c7665 
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Rd4KA7'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:251 (check_include_file)"
+      - "CMakeLists.txt:93 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-0V1KLx"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-0V1KLx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64"
+      CMAKE_MODULE_PATH: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/cmake"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-0V1KLx'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_027c1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_027c1.dir/build.make CMakeFiles/cmTC_027c1.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-0V1KLx'
+        Building C object CMakeFiles/cmTC_027c1.dir/CheckIncludeFile.c.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -o CMakeFiles/cmTC_027c1.dir/CheckIncludeFile.c.o -c /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-0V1KLx/CheckIncludeFile.c
+        cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+        Linking C executable cmTC_027c1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_027c1.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -rdynamic CMakeFiles/cmTC_027c1.dir/CheckIncludeFile.c.o -o cmTC_027c1 
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-0V1KLx'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:252 (check_include_file)"
+      - "CMakeLists.txt:93 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZulVOd"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZulVOd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64"
+      CMAKE_MODULE_PATH: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/cmake"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZulVOd'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ddcd9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ddcd9.dir/build.make CMakeFiles/cmTC_ddcd9.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZulVOd'
+        Building C object CMakeFiles/cmTC_ddcd9.dir/CheckIncludeFile.c.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -o CMakeFiles/cmTC_ddcd9.dir/CheckIncludeFile.c.o -c /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZulVOd/CheckIncludeFile.c
+        cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+        Linking C executable cmTC_ddcd9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddcd9.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -rdynamic CMakeFiles/cmTC_ddcd9.dir/CheckIncludeFile.c.o -o cmTC_ddcd9 
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZulVOd'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "CMakeLists.txt:93 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of long"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Pc4xd3"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Pc4xd3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64"
+      CMAKE_MODULE_PATH: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/cmake"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Pc4xd3'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ca6f3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ca6f3.dir/build.make CMakeFiles/cmTC_ca6f3.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Pc4xd3'
+        Building C object CMakeFiles/cmTC_ca6f3.dir/SIZEOF_LONG.c.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -o CMakeFiles/cmTC_ca6f3.dir/SIZEOF_LONG.c.o -c /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Pc4xd3/SIZEOF_LONG.c
+        cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+        Linking C executable cmTC_ca6f3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca6f3.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -rdynamic CMakeFiles/cmTC_ca6f3.dir/SIZEOF_LONG.c.o -o cmTC_ca6f3 
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-Pc4xd3'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "CMakeLists.txt:94 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of long long"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-b7O6tk"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-b7O6tk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64"
+      CMAKE_MODULE_PATH: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/cmake"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-b7O6tk'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_162bd/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_162bd.dir/build.make CMakeFiles/cmTC_162bd.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-b7O6tk'
+        Building C object CMakeFiles/cmTC_162bd.dir/SIZEOF_LONG_LONG.c.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -o CMakeFiles/cmTC_162bd.dir/SIZEOF_LONG_LONG.c.o -c /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-b7O6tk/SIZEOF_LONG_LONG.c
+        cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+        Linking C executable cmTC_162bd
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_162bd.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -rdynamic CMakeFiles/cmTC_162bd.dir/SIZEOF_LONG_LONG.c.o -o cmTC_162bd 
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-b7O6tk'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:97 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test HAVE_STD_C11"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-oxU7rb"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-oxU7rb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64"
+      CMAKE_MODULE_PATH: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/cmake"
+    buildResult:
+      variable: "HAVE_STD_C11"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-oxU7rb'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_aee43/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_aee43.dir/build.make CMakeFiles/cmTC_aee43.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-oxU7rb'
+        Building C object CMakeFiles/cmTC_aee43.dir/src.c.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -DHAVE_STD_C11  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64    -std=c11 -o CMakeFiles/cmTC_aee43.dir/src.c.o -c /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-oxU7rb/src.c
+        cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+        Linking C executable cmTC_aee43
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aee43.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -rdynamic CMakeFiles/cmTC_aee43.dir/src.c.o -o cmTC_aee43 
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-oxU7rb'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:101 (CHECK_C_COMPILER_FLAG)"
+    checks:
+      - "Performing Test HAVE_STD_C99"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZQE1Kn"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZQE1Kn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64"
+      CMAKE_MODULE_PATH: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/cmake"
+    buildResult:
+      variable: "HAVE_STD_C99"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZQE1Kn'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_83b33/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_83b33.dir/build.make CMakeFiles/cmTC_83b33.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZQE1Kn'
+        Building C object CMakeFiles/cmTC_83b33.dir/src.c.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -DHAVE_STD_C99  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64    -std=c99 -o CMakeFiles/cmTC_83b33.dir/src.c.o -c /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZQE1Kn/src.c
+        cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+        Linking C executable cmTC_83b33
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83b33.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -rdynamic CMakeFiles/cmTC_83b33.dir/src.c.o -o cmTC_83b33 
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-ZQE1Kn'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMakeLists.txt:109 (CHECK_SYMBOL_EXISTS)"
+    checks:
+      - "Looking for posix_memalign"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-diKcum"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-diKcum"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64"
+      CMAKE_MODULE_PATH: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/cmake"
+    buildResult:
+      variable: "HAVE_POSIX_MEMALIGN_DEFAULT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-diKcum'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d08ec/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d08ec.dir/build.make CMakeFiles/cmTC_d08ec.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-diKcum'
+        Building C object CMakeFiles/cmTC_d08ec.dir/CheckSymbolExists.c.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -o CMakeFiles/cmTC_d08ec.dir/CheckSymbolExists.c.o -c /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-diKcum/CheckSymbolExists.c
+        cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+        Linking C executable cmTC_d08ec
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d08ec.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -rdynamic CMakeFiles/cmTC_d08ec.dir/CheckSymbolExists.c.o -o cmTC_d08ec 
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-diKcum'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/CheckFileOffsetBits.cmake:19 (TRY_COMPILE)"
+      - "CMakeLists.txt:124 (CHECK_FILE_OFFSET_BITS)"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeTmp"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64"
+      CMAKE_MODULE_PATH: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/cmake"
+    buildResult:
+      variable: "__WITHOUT_FILE_OFFSET_BITS_64"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7d6b5/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7d6b5.dir/build.make CMakeFiles/cmTC_7d6b5.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_7d6b5.dir/CheckFileOffsetBits.c.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -o CMakeFiles/cmTC_7d6b5.dir/CheckFileOffsetBits.c.o -c /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/cmake/CheckFileOffsetBits.c
+        cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+        Linking C executable cmTC_7d6b5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d6b5.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -rdynamic CMakeFiles/cmTC_7d6b5.dir/CheckFileOffsetBits.c.o -o cmTC_7d6b5 
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:163 (CHECK_C_SOURCE_COMPILES)"
+    checks:
+      - "Performing Test INLINE_IS_C99"
+    directories:
+      source: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-TkgKLD"
+      binary: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-TkgKLD"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64"
+      CMAKE_MODULE_PATH: "/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/cmake"
+    buildResult:
+      variable: "INLINE_IS_C99"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-TkgKLD'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_42957/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_42957.dir/build.make CMakeFiles/cmTC_42957.dir/build
+        gmake[1]: Entering directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-TkgKLD'
+        Building C object CMakeFiles/cmTC_42957.dir/src.c.o
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -DINLINE_IS_C99  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -D_LARGEFILE_SOURCE -D_LARGE_FILES -fno-inline -o CMakeFiles/cmTC_42957.dir/src.c.o -c /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-TkgKLD/src.c
+        cc1: warning: command line option '-ftarget=aarch64-linux-android21' is valid for Java but not for C
+        Linking C executable cmTC_42957
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42957.dir/link.txt --verbose=1
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-gcc -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O3 -DNDEBUG  -fPIC  --target=aarch64-linux-android21 --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -D_LARGEFILE_SOURCE -D_LARGE_FILES -fno-inline -L/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64/usr/lib -lc -ldl --sysroot=/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-ndk-r12b/platforms/android-21/arch-arm64  -rdynamic CMakeFiles/cmTC_42957.dir/src.c.o -o cmTC_42957 
+        CMakeFiles/cmTC_42957.dir/src.c.o: In function `main':
+        /home/andrei/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-TkgKLD/src.c:2: undefined reference to `foo'
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_42957.dir/build.make:99: cmTC_42957] Error 1
+        gmake[1]: Leaving directory '/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/openal-soft-1.17.2/CMakeFiles/CMakeScratch/TryCompile-TkgKLD'
+        gmake: *** [Makefile:127: cmTC_42957/fast] Error 2
+        
+      exitCode: 2
+...

@@ -1,0 +1,1386 @@
+<pre>
+On branch release/4.1-next1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   configure
+
+no changes added to commit (use "git add" and/or "git commit -a")
+commit 6ca42176ffe3c05c61e1c163541e8a48ce57586a
+Author: Carl Eugen Hoyos <ceffmpeg@gmail.com>
+Date:   Wed Jun 19 13:41:01 2019 +0200
+
+    lavc/tableprint_vlc: Remove avpriv_request_sample() from included files.
+    
+    Fixes compilation with --enable-hardcoded-tables.
+    Fixes ticket #7962.
+
+commit 6bf06c58d161ee27ea67f7b672c99ad0d0c3dc19
+Author: Kirill Gavrilov <kirill@sview.ru>
+Date:   Sat Jan 26 16:39:29 2019 +0300
+
+    Workaround missing <inttypes.h> within VS2010
+
+commit a35354a4b04ec50d522decd420d477ba6ee681ae
+Author: Kirill Gavrilov <kirill@sview.ru>
+Date:   Wed Jan 23 23:11:54 2019 +0300
+
+    Workaround building on old Android NDK (before r17)
+    
+    @sa https://gitlab.gnome.org/GNOME/glib/commit/7efd76dd6796f886134436e04fb149132b18b989
+
+commit 0c904c0d3ff85ed5f634ff3e3202d5c1cd4a95d1
+Author: Mark Harris <mark.hsj@gmail.com>
+Date:   Sat Nov 24 13:02:02 2018 -0800
+
+    avutil/mem: Fix invalid use of av_alloc_size
+    
+    The alloc_size attribute is valid only on functions that return a
+    pointer.  GCC 9 (not yet released) warns about invalid usage:
+    
+    ./libavutil/mem.h:342:1: warning: 'alloc_size' attribute ignored on a function returning int' [-Wattributes]
+      342 | av_alloc_size(2, 3) int av_reallocp_array(void *ptr, size_t nmemb, size_t size);
+          | ^~~~~~~~~~~~~
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 4361293fcf59edb56879c36edcd25f0a91e0edf8)
+
+commit 6e0cf9a9df4a21df89825427914e38bd4c6216ba
+Author: Andreas Rheinhardt <andreas.rheinhardt@gmail.com>
+Date:   Wed Jun 5 04:18:54 2019 +0200
+
+    cbs_h2645: Fix infinite loop in more_rbsp_data
+    
+    cbs_h2645_read_more_rbsp_data does not handle malformed input very well:
+    1. If there were <= 8 bits left in the bitreader, these bits were read
+    via show_bits. But show_bits requires the number of bits to be read to
+    be > 0 (internally it shifts by 32 - number of bits to be read which is
+    undefined behaviour if said number is zero; there is also an assert for
+    this, but it is only an av_assert2). Furthermore, in this case a shift
+    by -1 was performed which is of course undefined behaviour, too.
+    2. If there were > 0 and <= 8 bits left and all of them were zero
+    (this can only happen for defective input), it was reported that there
+    was further RBSP data.
+    
+    This can lead to an infinite loop in H.265's cbs_h265_read_extension_data
+    corresponding to the [vsp]ps_extension_data_flag syntax elements. If the
+    relevant flag indicates the (potential) occurence of these syntax elements,
+    while all bits after this flag are zero, cbs_h2645_read_more_rbsp_data
+    always returns 1 on x86. Given that a checked bitstream reader is used,
+    we are also not "saved" by an overflow in the bitstream reader's index.
+    
+    Signed-off-by: Andreas Rheinhardt <andreas.rheinhardt@gmail.com>
+    (cherry picked from commit d4035ca849bdb90e95c87e2737a99ea657be0716)
+
+commit a21a9c78637ac1d86dd272214b6fc2008aef4db1
+Author: James Almer <jamrial@gmail.com>
+Date:   Sat Jul 20 21:47:55 2019 -0300
+
+    avformat/aacdec: resync to the next adts frame on invalid data instead of aborting
+    
+    Should fix ticket #6634
+    
+    Signed-off-by: James Almer <jamrial@gmail.com>
+    (cherry picked from commit 881e1f5a6227a6fbaf67083d4d4b6caf58ff9892)
+
+commit 1fbe0286e4091dd4cdc0694965d92c42b98cacf1
+Author: James Almer <jamrial@gmail.com>
+Date:   Sat Jul 20 10:13:08 2019 -0300
+
+    avformat/aacdec: factorize the adts frame resync code
+    
+    Signed-off-by: James Almer <jamrial@gmail.com>
+    (cherry picked from commit a38eab8b7501440f872ff1af8a0c5482b7b3e532)
+
+commit 1b6bcee9fe6f59a2d8c11c18711d65d744b0b5aa
+Author: Andreas Rheinhardt <andreas.rheinhardt@gmail.com>
+Date:   Wed May 22 03:04:34 2019 +0200
+
+    cbs_mpeg2: Fix storage type for frame_centre_*_offset
+    
+    The frame_centre_horizontal/vertical_offset values contained in picture
+    display extensions are actually signed values (i.e. it is possible to
+    indicate that the display device should add black bars/pillars).
+    
+    The files sony-ct3.bs and tcela-6.bits (which are both used in fate
+    tests for mpeg2_metadata) contain picture display extensions; the former
+    even contains a negative frame_centre_vertical_offset. Fortunately, the
+    old code did not damage the picture display extensions when one did a
+    cycle of reading and writing. For the same reason the fate tests needn't
+    be updated either.
+    
+    Furthermore these fields now use the trace output for matrices.
+    
+    Signed-off-by: Andreas Rheinhardt <andreas.rheinhardt@gmail.com>
+    (cherry picked from commit de5880383967f44927c599ab16fa0f4f96b38365)
+
+commit b010caa6c9e85657c2032046773cb1a816a5b1da
+Author: Andreas Rheinhardt <andreas.rheinhardt@gmail.com>
+Date:   Wed May 22 03:04:32 2019 +0200
+
+    cbs_mpeg2: Improve checks for invalid values
+    
+    MPEG-2 contains several elements that mustn't be zero according to the
+    specifications: horizontal/vertical_size_value, aspect_ratio_information,
+    frame_rate_code, the quantiser matrices, the colour_description
+    elements, picture_coding_type, the f_code[r][s] values and
+    quantiser_scale_code. It is now checked that the invalid values don't
+    occur.
+    
+    The colour_description elements are treated specially in this regard:
+    Given that there are files in the wild which use illegal values for the
+    colour_description elements (some of them created by mpeg2_metadata),
+    they will be corrected to the value meaning "unknown" (namely 2) during
+    reading. This has been done in such a way that trace_headers will
+    nevertheless report the original value, together with a message about
+    the fixup.
+    
+    Furthermore, the trace_headers output of user_data has been beautified.
+    
+    Signed-off-by: Andreas Rheinhardt <andreas.rheinhardt@gmail.com>
+    (cherry picked from commit 9c3f2a8894a66d6b5b9285caa25f91fbfca7b3bc)
+
+commit ae5c80b9cae8716085eaacd887c28378ae99233b
+Author: James Almer <jamrial@gmail.com>
+Date:   Wed May 22 03:04:38 2019 +0200
+
+    avcodec/cbs_mpeg2: fix leak of extra_information_slice buffer in cbs_mpeg2_read_slice_header()
+    
+    cbs_mpeg2_free_slice() calls av_buffer_unref() on extra_information_ref,
+    meaning allocating with av_malloc() was not the intention.
+    
+    Signed-off-by: James Almer <jamrial@gmail.com>
+    (cherry picked from commit d903c09d9a5c641223f0810d24161520e977544a)
+
+commit b3b5941ec7b4c1dbb059b0cd85db3c659d5c8039
+Author: Carl Eugen Hoyos <ceffmpeg@gmail.com>
+Date:   Mon Dec 17 14:39:41 2018 +0100
+
+    lavc/cbs: Do not use format specifier "z" on Windows.
+    
+    (cherry picked from commit 0b7269e62d0345fec5f1ee9ee7b960e8d25c5dd1)
+
+commit 84b94fdd05d24f161f6559bfef63a8db049e0cc7
+Author: Carl Eugen Hoyos <ceffmpeg@gmail.com>
+Date:   Mon Dec 10 02:18:56 2018 +0100
+
+    lavc/cbs_vp9: Make variable prob unsigned.
+    
+    Silences a warning with clang:
+    libavcodec/cbs_vp9_syntax_template.c:220:17: warning: implicit conversion from 'int' to 'int8_t' (aka 'signed char')
+          changes value from 255 to -1
+    
+    (cherry picked from commit de441ad52a4d9791d93c278b4cf6867815c28b92)
+
+commit a2132139852c57e71c731d10e5dc20e97342c289
+Author: James Almer <jamrial@gmail.com>
+Date:   Mon Apr 15 17:50:01 2019 -0300
+
+    avcodec/cbs_h264: fix storage type for time_offset in Pic Timing SEI
+    
+    The spec defines it as a signed value.
+    
+    Reviewed-by: Mark Thompson <sw@jkqxz.net>
+    Signed-off-by: James Almer <jamrial@gmail.com>
+    (cherry picked from commit 9bf520d04d6137d0772e019356356614bbf7ca82)
+
+commit 94b1630b7ca34964aa873a59540ecd895a1bf9e6
+Author: James Almer <jamrial@gmail.com>
+Date:   Mon Apr 15 17:48:55 2019 -0300
+
+    avcodec/cbs_h2645: add helper macros for signed values
+    
+    Reviewed-by: Mark Thompson <sw@jkqxz.net>
+    Signed-off-by: James Almer <jamrial@gmail.com>
+    (cherry picked from commit 3dc6adf326c8cd6c7fc830ccb8def8772835c676)
+
+commit 7dc2366533d63df9d46be5ea3ec066e1977898d4
+Author: James Almer <jamrial@gmail.com>
+Date:   Mon Apr 15 17:46:53 2019 -0300
+
+    avcodec/cbs: add helper functions and macros to read and write signed values
+    
+    Reviewed-by: Mark Thompson <sw@jkqxz.net>
+    Signed-off-by: James Almer <jamrial@gmail.com>
+    (cherry picked from commit 5006dcdf9af177444e3e0185640d7d84629e4215)
+
+commit 2ac6315c7c3a0049b02d1d79f7944507fdc4c456
+Author: Andreas Rheinhardt <andreas.rheinhardt@googlemail.com>
+Date:   Wed Nov 7 04:47:51 2018 +0100
+
+    cbs_h264: Fix handling of auxiliary pictures
+    
+    The earlier code used the most recent non-auxiliary slice to determine
+    whether an auxiliary slice has the syntax of an IDR slice, even when
+    the most recent slice was from a slice of a redundant frame. Now only
+    slices of the primary coded picture are used, as the specifications
+    mandate.
+    
+    Signed-off-by: Andreas Rheinhardt <andreas.rheinhardt@googlemail.com>
+    (cherry picked from commit 8d1cf2d89481ca986af893425188d065c0f8f857)
+
+commit 9d06c1f95ebe4f9c2cc05d041dbfd3de52d2518a
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Mon Jul 8 20:10:55 2019 +0200
+
+    Changelog: fix typo
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 7d4e9074c6aba80a0e08fc26128e3603714ffaad
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Mon Jul 8 11:53:46 2019 +0200
+
+    Changelog: update
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 7654e5aa3b6e57f6cf161531af340ae41929fa70
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 30 23:28:13 2019 +0200
+
+    avcodec/ilbcdec: Simplify use of unsigned and fix more undefined overflows
+    
+    Fixes: signed integer overflow: 2147475672 + 8192 cannot be represented in type 'int'
+    Fixes: 15415/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ILBC_fuzzer-5712074128228352
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 019d729039aaa164152035864d65d77e53df1c98)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 6ddb253f79677e2e0594715b1b91720606b0e331
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 30 17:54:45 2019 +0200
+
+    avcodec/golomb: Correct the doxy about get_ue_golomb() and errors
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 1bb3b3f11c6960e90bcfe685c0ad1e355a3e787e)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit a1416c6c8d1234a53b7e52f45d7f5d613ff8cf10
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 29 23:23:25 2019 +0200
+
+    avformat/utils: Check timebase before use in estimate_timings()
+    
+    Fixes: division by 0
+    Fixes: 15480/clusterfuzz-testcase-minimized-ffmpeg_DEMUXER_fuzzer-5746727434321920
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit f57e97dfd9539bc3f4f97a76ebc001f0b055cb88)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 3e3db69193809d5c1844b0e49f9f8da181492133
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 29 21:53:09 2019 +0200
+
+    avcodec/hq_hqa: Use ff_set_dimensions()
+    
+    Fixes: 15530/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_HQ_HQA_fuzzer-5637370344374272
+    Fixes: signed integer overflow: 65312 * 65312 cannot be represented in type 'int'
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit a6229fcd405d4135848c83df73634871260de59c)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 16f8e50f86ce6c9944f31045dae9639baaadf444
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Fri Jun 28 19:20:43 2019 +0200
+
+    avcodec/rv10: Fix integer overflow in aspect ratio compare
+    
+    Fixes: signed integer overflow: 2040 * 1187872 cannot be represented in type 'int'
+    Fixes: 15368/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_RV20_fuzzer-5681657136283648
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 14fcf42958608223a0be6558fb6e323419c9fc27)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 4db3ec5e7b1ab08abbe08dbcb7c9de37e8b3dfe4
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 27 00:15:03 2019 +0200
+
+    avcodec/4xm: Fix signed integer overflows in idct()
+    
+    Fixes: signed integer overflow: 20242 * 121095 cannot be represented in type 'int'
+    Fixes: 15310/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_FOURXM_fuzzer-5737051745419264
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 2bbea155bf7c6ce6d5ae53cc41e44798cad2f39c)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 2424d0096e303786fdd4eb6663215f76f8e9da87
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Mon Jun 24 01:01:04 2019 +0200
+
+    avcodec/qdm2: Check checksum_size for 0
+    
+    Fixes: Infinite loop
+    Fixes: 15337/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_QDM2_fuzzer-5757428949319680
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 7b2ebf89a411d957ca999f1e7a919ff617fbfd56)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 07975e89d32642e588d7713feed5a949e976e50e
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Mon Jun 24 01:01:03 2019 +0200
+
+    avcodec/qdm2: error out of qdm2_fft_decode_tones() before entering endless loop
+    
+    Fixes: signed integer overflow: 2147483646 + 2 cannot be represented in type 'int'
+    Fixes: infinite loop
+    Fixes: 15396/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_QDM2_fuzzer-5116605501014016
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 694be24bd6c4cc9c62222f4583260bf79056e4c1)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit e5c21ed6e35e1efc89b583c793fd64b8b53f93e3
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Mon Jun 24 01:01:02 2019 +0200
+
+    avcodec/qdm2: Do not read out of array in fix_coding_method_array()
+    
+    Instead we ask for a sample, its unclear what to do in this case.
+    
+    Fixes: index 30 out of bounds for type 'int8_t [30][64]'
+    Fixes: 15339/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_QDM2_fuzzer-5749441484554240
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit ae021c1239ec3bc0a30dc5a4720569071599ece4)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit dd59d92e942f0986d87a80ea69b570e804ed7106
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Tue Jun 25 23:42:43 2019 +0200
+
+    avcodec/svq3: Use ff_set_dimension()
+    
+    Fixes: OOM
+    Fixes: 15410/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_SVQ3_fuzzer-5659464805384192
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 7b114d76878f1a542bcb75456492cc43e6414f8b)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit d534cb834564f440c6368b5c6597c67e1f97635d
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 22 19:21:50 2019 +0200
+
+    avcodec/iff: Check ham vs bpp
+    
+    This checks the ham value much stricter and avoids hitting cases which cannot be reached
+    with data from the libavformat demuxer.
+    
+    Fixes: out of array access
+    Fixes: 15320/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_IFF_ILBM_fuzzer-5080476840099840
+    Fixes: 15423/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_IFF_ILBM_fuzzer-5630765833912320
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit f76d7352e05526fde7c607b9a9db536a5760af29)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 074f40608e19ce7ce44c320dda87836806991d59
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Fri Jun 21 22:43:23 2019 +0200
+
+    avcodec/ffwavesynth: use uint32_t to compute difference, it is enough
+    
+    Fixes: signed integer overflow: 6494225984479297536 - -6043795377581187040 cannot be represented in type 'long'
+    Fixes: 15285/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_FFWAVESYNTH_fuzzer-5632780307791872
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit e9dd3c7126097d7c8d4f137db9957b81a219aa2c)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 73885bf3e19651b2316eac6690167095039603b2
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Fri Jun 21 22:41:25 2019 +0200
+
+    avcodec/ffwavesynth: Simplify lcg_seek(), avoid negative case
+    
+    Fixes: negation of -9223372036854775808 cannot be represented in type 'int64_t' (aka 'long'); cast to an unsigned type to negate this value to itself
+    Fixes: 15289/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_FFWAVESYNTH_fuzzer-5709034499342336
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 8c022099351c04ae21e0b8696ea71a690ed03cd2)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 24ea2679e2c93891a6a4c5fbddad6c27e459c140
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Fri Jun 21 22:08:27 2019 +0200
+
+    avcodec/ffwavesynth: Fix backward lcg_seek()
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit cf2bd3ce79b12256d7d129b2ada5ee649b9a27eb)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 10880dd695daa1fb85ef96a15be5b46ce339d2fb
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Fri Jun 21 23:45:36 2019 +0200
+
+    avcodec/flicvideo: Fix off by 1 error in flic_decode_frame_24BPP()
+    
+    Fixes: out of array access
+    Fixes: 15360/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_FLIC_fuzzer-5653837190266880
+    Fixes: 15412/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_FLIC_fuzzer-5740537648250880
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 37708cbae8d6887b80f58a70a1dfa01af6ea2c85)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 4d7ee3b0ff12c79a84ec29f9b876760795ef3d5d
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 15 23:28:25 2019 +0200
+
+    avcodec/vc1_block: Check for vlc error in vc1_decode_ac_coeff()
+    
+    Fixes: index -1 out of bounds for type 'const uint8_t [185][2]'
+    Fixes: 15250/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_WMV3IMAGE_fuzzer-5648992869810176
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 79204a1fc8f1988f7d7e6cae2c3b68f513444d38)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit ac9d8e7c501cc1118d99b6226a7fbef4e0578c72
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Wed Jun 19 01:04:07 2019 +0200
+
+    avcodec/alac: Check lpc_quant
+    
+    lpc_quant of 0 produces undefined behavior, thus disallow this.
+    If valid samples use this then such a sample would be quite
+    usefull to confirm the correct&lossles handling of this.
+    
+    Fixes: libavcodec/alac.c:218:25: runtime error: shift exponent -1 is negative
+    Fixes: 15273/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALAC_fuzzer-5656388535058432
+    Fixes: 15276/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALAC_fuzzer-5761238417539072
+    Fixes: 15315/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALAC_fuzzer-5767260766994432
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit a6474b899c1153e3bb95e399b6605c3507aea0d0)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit c697819aee7ff44181077859ca5f0962049272e2
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Mon Jun 3 11:22:36 2019 +0200
+
+    avcodec/dxv: Initialize tex_funct to NULL
+    
+    Fixes: Various anomalies
+    Fixes: 14493/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_DXV_fuzzer-5071018000908288
+    Fixes: 14630/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_DXV_fuzzer-5714888963391488
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit e96b7a8ba62c5e010328b80b647b64dd9cdbdc01)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit c34512371e1d09a1862a3c7f53a17b3e9198729a
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Fri Jun 21 00:47:19 2019 +0200
+
+    avcodec/alsdec: Add FF_CODEC_CAP_INIT_CLEANUP
+    
+    Fixes: multiple memleaks
+    Fixes: 15293/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALS_fuzzer-5642409288925184
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit b7b6ddd59693008c35b3247496ecc946331d0856)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit fa2dbcfd8f4b1ed7b62c464fb509a6b3b9bf4ab2
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Fri Jun 21 00:47:17 2019 +0200
+
+    avcodec/alsdec: Fix integer overflow with buffer number
+    
+    Fixes: signed integer overflow: 65313 * 65313 cannot be represented in type 'int'
+    Fixes: 15290/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALS_fuzzer-5738074249625600
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 5f64f6058e0c23641a68ce7dfe47b1f55efd401c)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit ed8e191bfb1f64612d9a751e5003f985d9adb402
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Fri Jun 21 00:47:16 2019 +0200
+
+    avcodec/alsdec: Fixes signed integer overflow in LSB addition
+    
+    Fixes: signed integer overflow: 8 * 536870912 cannot be represented in type 'int'
+    Fixes: 15281/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALS_fuzzer-5744458785619968
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 7f527021df73b4792323f38f84a4bf2fbe5a2052)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 75e838a6daa76a913361c7e725976b3b07a1312a
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Fri Jun 21 00:47:15 2019 +0200
+
+    avcodec/alsdec: Check opt_order / sb_length in ra_block handling
+    
+    Fixes: out of array access
+    Fixes: 15277/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALS_fuzzer-5184853437317120
+    Fixes: 15280/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALS_fuzzer-5741062137577472
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 0794494c8f2f756e3c9384dba21c54f7d4ba9286)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 99745dc2f353be1eb97291bd501053709b7b2d61
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Wed Jun 19 23:27:21 2019 +0200
+
+    avcodec/alsdec: Fix integer overflow with shifting samples
+    
+    Fixes: signed integer overflow: -346039050 * 8 cannot be represented in type 'int'
+    Fixes: 15283/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALS_fuzzer-5692700268953600
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit a3bd4b260eb9f0d5817f9b3d672844f127c51a0b)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit dcef55b5ff8e36d30100df956102ce190b835840
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Wed Jun 19 23:17:31 2019 +0200
+
+    avcodec/alsdec: Fix undefined behavior in decode_rice()
+    
+    Fixes: left shift of 72 by 26 places cannot be represented in type 'int'
+    Fixes: 15279/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALS_fuzzer-5700665621348352
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 51f6870c37cc29e1ea7e0c66df2fe505938b7561)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 10562175405277ac24f02ee2d29455169b1b54e0
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Wed Jun 19 21:53:43 2019 +0200
+
+    avcodec/alsdec: Fixes invalid shifts in read_var_block_data() and INTERLEAVE_OUTPUT()
+    
+    Fixes: left shift of negative value -6
+    Fixes: 15275/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALS_fuzzer-5742361767837696
+    Fixes: signed integer overflow: 41582592 * 256 cannot be represented in type 'int'
+    Fixes: 15296/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALS_fuzzer-5739558227935232
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit e131568752ad41222946304c61eadb87b0a24791)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit df61ec263faa1408a0a63bad2d3d5bf0462dadb2
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Tue Jun 25 10:29:57 2019 +0200
+
+    avcodec/hevc_ps: Change num_tile_rows/columns checks to sps->ctb_height/weight
+    
+    Suggested-by: James Almer <jamrial@gmail.com>
+    Reviewed-by: James Almer <jamrial@gmail.com
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 3b2082c663dac93fd722289a540c1b1e24a12564)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 3fa15bb096b1e64206f0307460c9b694e6d368d9
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 13 15:05:54 2019 +0200
+
+    avcodec/hevc_ps: Fix integer overflow with num_tile_rows and num_tile_columns
+    
+    Fixes: signed integer overflow: -2147483648 - 1 cannot be represented in type 'int'
+    Fixes: 14880/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_HEVC_fuzzer-5130977304641536
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Reviewed-by: James Almer <jamrial@gmail.com>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit c692051252693155c4eecd16f4f8a79caf66cd54)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 523a47b3f6004352236ec46e9d870e236b1428f3
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 16 11:26:57 2019 +0200
+
+    avcodec/apedec: Add k < 24 check to the only k++ case which lacks such a check
+    
+    Fixes: 15255/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_APE_fuzzer-5718831688843264
+    Fixes: left shift of 1 by 31 places cannot be represented in type 'int'
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 3d4f4f4a15e79c96c3613e5c252b2f5cc4190e18)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 7d075c5f337f76bbefee8fbcff7e3cc8d9f14a24
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 9 22:04:16 2019 +0200
+
+    avformat/aviobuf: Delay buffer downsizing until asserts are met
+    
+    Fixes: Assertion failure
+    Fixes: 15151/clusterfuzz-testcase-minimized-ffmpeg_DEMUXER_fuzzer-5757079496687616
+    Fixes: 15205/clusterfuzz-testcase-minimized-ffmpeg_DEMUXER_fuzzer-5767573242642432
+    May fix: Ticket7094
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 0334632d5c02720f1829d59cd20c009584b5b163)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit b5d6b509b1ce6c663c30d329d939ff13bfd4e280
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 13 00:24:53 2019 +0200
+
+    avcodec/fitsdec: Check data_min/max
+    
+    Fixes: division by 0
+    Fixes: 15206/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_FITS_fuzzer-5657260212092928
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit eb82d19f035f59edf0aee215f02baaea908875de)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit f3bfb0717982992959ac4ecd40f4d2ddcab25eb1
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Mon Jun 17 21:13:17 2019 +0200
+
+    avcodec/m101: Fix off be 2 error
+    
+    Fixes: out of array read
+    Fixes: 15263/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_M101_fuzzer-5728999453491200
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 89b96900fa7c17d0770c9af26af7c3ae36ae0253)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 423d0bbc556721849847d6dc9143d41d97b9a03c
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Mon Jun 17 20:58:47 2019 +0200
+
+    avcodec/qdm2: Move fft_order check up
+    
+    This avoids undefined computations with unchecked values
+    
+    Fixes: shift exponent -21 is negative
+    Fixes: 15262/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_QDM2_fuzzer-5651261753393152
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 8d8b8c4ac6fb5b5d40bd131f2d2ea9d85b8759a6)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 1aa0c2a06f005cac6e2f310f368a38af91682c62
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Mon Jun 17 21:26:45 2019 +0200
+
+    avcodec/libvorbisdec: Check extradata size
+    
+    Fixes: out of array read
+    Fixes: 15261/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_LIBVORBIS_fuzzer-5764908467093504
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit cf3c245566e8a8d45ed2ad9fdff9ef50327ba2d3)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 5b8bce805c687e3558f0c77deea49aa97190e0ed
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Tue Jun 18 23:17:23 2019 +0200
+
+    avformat/vqf: Check header_size
+    
+    Fixes: 15271/clusterfuzz-testcase-minimized-ffmpeg_DEMUXER_fuzzer-5735262606327808
+    Fixes: signed integer overflow: -2147483648 - 8 cannot be represented in type 'int'
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 7c30ff38880570377168096417f714b21102b343)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 7daa138f6819ef5ec65fd6af52aeb2ebb0ed9486
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 16 21:01:50 2019 +0200
+
+    avcodec/atrac9dec: Check q_unit_cnt in parse_band_ext()
+    
+    Fixes: global-buffer-overflow
+    Fixes: 15247/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ATRAC9_fuzzer-5671602181636096
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit fb4a4557d15bce601e2462207648741600fa273f)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 3d1903acfee865935b73957e1b4df5ae090c93f9
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 16 20:56:20 2019 +0200
+
+    avcodec/atrac9dec: Check that the reused block has succeeded initilization
+    
+    Fixes: global-buffer-overflow
+    Fixes: 15247/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ATRAC9_fuzzer-5671602181636096
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit ac9af7e9a5befa8a554bacbcc59ab2f11203d85e)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 6872daee87b9b7a8adcb3bd3b1defea6f2153d2b
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 27 19:51:59 2019 +0200
+
+    Update for 4.1.4
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 1603661523e37940ec98e320e631886fca48fd87
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Tue Jun 18 23:55:56 2019 +0200
+
+    avcodec/utils: Check bits_per_coded_sample
+    
+    This avoids the need for each decoder separately having to handle this case
+    
+    Fixes: shift exponent -100663046 is negative
+    Fixes: out of array access
+    Fixes: 15270/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_IFF_ILBM_fuzzer-5727829913763840
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit d33414d2ad27a5d2193c9ab0948ba7a282c2f910)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 297c5c26cddab668f22a2595ddc0a5984ddd4056
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 15 00:47:06 2019 +0200
+
+    avcodec/videodsp_template: Fix overflow of addition
+    
+    Fixes: addition of unsigned offset to 0x7f56fc26a9b6 overflowed to 0x7f56fc26a8be*
+    Fixes: clusterfuzz-testcase-minimized-mediasource_MP4_AVC1_pipeline_integration_fuzzer-4917949056679936
+    
+    Reported-by: Matt Wolenetz <wolenetz@google.com>
+    Reviewed-by: Matt Wolenetz <wolenetz@google.com>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 247a1de7f7d9c5628cf188e677d10ce9e12bd2f2)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 9ede5cab3afae1473a63f148b15af9d88809e646
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 20 19:09:11 2019 +0200
+
+    avcodec/alsdec: Fix invalid shift in multiply()
+    
+    Fixes: shift exponent -24 is negative
+    Fixes: 15292/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_ALS_fuzzer-5768533318828032
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit f30be1ec9856551d96f3876eec5f8b8abf456b81)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit c434a043ac081e0f5d8c166f8416346002d462fa
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 16 16:12:42 2019 +0200
+
+    avcodec/ffwavesynth: Check ts_end - ts_start for overflow
+    
+    Fixes: signed integer overflow: 2314885530818453536 - -8926099139098304480 cannot be represented in type 'long'
+    Fixes: 15259/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_FFWAVESYNTH_fuzzer-5764366093254656
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 2db7a3bc4acdd293ed10b71e55f16a45ca28b629)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 92140d7b24e40797d171e73482e8d408fbdfbfd5
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 16 16:17:12 2019 +0200
+
+    avcodec/vc1dsp: Avoid undefined shifts in vc1_v_s_overlap_c / vc1_h_s_overlap_c
+    
+    Fixes: left shift of negative value -13
+    Fixes: 15260/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_VC1_fuzzer-5702076048343040
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 507ca66ee41aa8a95b75654163f77af0a99a25b1)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 1b4b738033df2d3afd0acf23aa668ec874dafac4
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 16 15:55:55 2019 +0200
+
+    avcodec/tta: Fix undefined shift
+    
+    Fixes: left shift of negative value -4483
+    Fixes: 15256/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_TTA_fuzzer-5738691617619968
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit ebccd2f778a861b41ad38a8464ea120d4f16b2d7)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit d00e33ed3a2127901b622081b364580144be12c4
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 16 15:53:27 2019 +0200
+
+    avcodec/qdmc: Fix integer overflows in PRNG
+    
+    Fixes: signed integer overflow: 214013 * 2531011 cannot be represented in type 'int'
+    Fixes: 15254/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_QDMC_fuzzer-5698137026461696
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 2921b45a388a81968d946996bb32e72d7bb5d5b7)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 9b8a58fa78062ddee07a54237c77dcdc6186aab1
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 16 16:01:45 2019 +0200
+
+    avcodec/bintext: Check font height
+    
+    Fixes: division by zero
+    Fixes: 15257/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_BINTEXT_fuzzer-5757352881422336
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit bfb58bdd7015a6df2d130c92cf284d6a2362f3df)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit d08d4b1066d3c7956b6f7bce74d159fae888f41b
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Tue Jun 18 14:28:17 2019 +0200
+
+    avcodec/binkdsp: Fix integer overflows in idct
+    
+    Fixes: signed integer overflow: 3784 * 682038 cannot be represented in type 'int'
+    Fixes: 15265/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_BINK_fuzzer-5088311799971840
+    Fixes: 15268/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_BINK_fuzzer-5666502344179712
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Reviewed-by: Reviewed-by: Peter Ross <pross@xvid.org>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 7a072fbcc4c6f8ddbf37b131c2d141589118abcd)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 9a68341e9ee90e8f02d3aea7b8a981a867e8da14
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Tue Jun 18 14:28:17 2019 +0200
+
+    avcodec/bink: Fix integer overflow in unquantize_dct_coeffs()
+    
+    Fixes: signed integer overflow: -3447 * 2883584 cannot be represented in type 'int'
+    Fixes: 15265/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_BINK_fuzzer-5088311799971840
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Reviewed-by: Peter Ross <pross@xvid.org>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 62ad08cef993f7a103b6d3a5498f6fa49190e085)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit da081ecf69f4c46c6638abb28b0acac33c2be075
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 15 21:08:31 2019 +0200
+
+    avcodec/motionpixels: Check for vlc error in mp_get_vlc()
+    
+    Fixes: 15246/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_MOTIONPIXELS_fuzzer-5168534407086080
+    Fixes: runtime error: index -1 out of bounds for type 'HuffCode [16]'
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 930cdef80ab695132d3de2128c3c23f2d698918b)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 479b70d2f84b340a66ade598454df968bf71cf5f
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 15 21:47:16 2019 +0200
+
+    avcodec/loco: Limit lossy parameter so it is sane and does not overflow
+    
+    Fixes: 15248/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_LOCO_fuzzer-5087440458481664
+    Fixes: signed integer overflow: 3 + 2147483647 cannot be represented in type 'int'
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit ce3b0b9066b433564ed3ee3eed3a1e8f2c0834a1)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 65e144014080281165a4cc04ab6096995c118d91
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 15 00:12:36 2019 +0200
+
+    avformat/mov: Set fragment.found_tfhd only after TFHD has been parsed
+    
+    Fixes: Assertion failure
+    Fixes: crbug971646.mp4
+    
+    Reported-by: Matt Wolenetz <wolenetz@google.com>
+    Reviewed-by: Matt Wolenetz <wolenetz@google.com>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 696312c487d9d8c49a087017a829d1cdcbd68651)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 529a719a25e2949e80a4efee7880e3cf314cb98e
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Wed Jun 12 20:13:34 2019 +0200
+
+    avcodec/xpmdec: Do not use context dimensions as temporary variables
+    
+    Fixes: Integer overflow
+    Fixes: 15134/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_XPM_fuzzer-5722635939348480
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 5ea7f2050050fd6a9177a9b618f2bb2d4add9230)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit c0e3f54ec061629d79549ee4855c8b4f844d3ad1
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 13 16:08:03 2019 +0200
+
+    avcodec/fitsdec: Fix division by 0 in size check
+    
+    Fixes: division by zero
+    Fixes: 15210/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_FITS_fuzzer-5746033243455488
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 07ffe94c172041cfb03109b9bb6b8bf577332bda)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 26605408f1aaf212d966277ece9dc6ce73ce5a1d
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 13 15:00:14 2019 +0200
+
+    avcodec/aacpsdsp_template: Fix integer overflow in ps_hybrid_analysis_c()
+    
+    Fixes: signed integer overflow: -1539565182 + -798086761 cannot be represented in type 'int'
+    Fixes: 14807/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_AAC_FIXED_fuzzer-564925382682214
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit f8f5668df590d853429586e1f95cbd9cee38920e)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit ef73b0da2df22f5f589692961d17d2294cd2a457
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 13 19:45:50 2019 +0200
+
+    avcodec/truemotion2: Fix integer overflow in last loop in tm2_update_block()
+    
+    Fixes: signed integer overflow: -1727985666 - 538976288 cannot be represented in type 'int'
+    Fixes: 15031/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_TRUEMOTION2_fuzzer-5100228035739648
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 3aecd0170413c7e56f19de4e34d093a2c4027c2a)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 8ba9b195e7780f86260d3eb2023504dac10e7277
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 22 21:17:52 2019 +0200
+
+    avcodec/iff: finetune the palette size check in the mask case
+    
+    Fixes: out of array access
+    Fixes: 15381/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_IFF_ILBM_fuzzer-5668057826983936
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Reviewed-by: Peter Ross <pross@xvid.org>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 0f9789c8e37eb6d166729e876729beb21b7d5647)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 4d2343825c04fdf0433678da2d58d6f342124e3f
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 22 20:05:15 2019 +0200
+
+    avcodec/iff: Fix mask_buf / mask_palbuf leak
+    
+    Fixes: 15372/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_IFF_ILBM_fuzzer-5708881759567872
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Reviewed-by: Peter Ross <pross@xvid.org>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 92e8db532cdee3c73913174413428ffdc35032e2)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 45d3ba9e5f57761a56f08f743f8ba9a137fca623
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 8 10:48:41 2019 +0200
+
+    avformat/icodec: Free ico->images on error paths
+    
+    Fixes: 15116/clusterfuzz-testcase-minimized-ffmpeg_DEMUXER_fuzzer-5715173567889408
+    Fixes: memleak
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 54918b51161610a364de697b80acb9583eecf41b)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 0789b6295bbf343ef07bb6629ff19aaf1de49ed7
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 8 09:27:49 2019 +0200
+
+    avformat/wsddec: Fix undefined shift
+    
+    Fixes: left shift of 1 by 31 places cannot be represented in type 'int'
+    Fixes: 15123/clusterfuzz-testcase-minimized-ffmpeg_DEMUXER_fuzzer-5738039235575808
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 112eb17a2bbf6d02f81fdf0743b353a6b010aedc)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit a56b96a3dade2552efd13a30d395c135fab7f8cb
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun Jun 2 23:16:40 2019 +0200
+
+    avcodec/fmvc: Check if header fields are available before allocating the image
+    
+    Fixes: Timeout (15sec -> 0.5sec)
+    Fixes: 14846/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_FMVC_fuzzer-5068322120400896
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Reviewed-by: Paul B Mahol <onemda@gmail.com>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 561cc161ca617c1b8d48fef0f02d56c0f1af0486)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 6e26b1b0b18df60f77f6c0878438783a8b851f6f
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 15 21:52:24 2019 +0200
+
+    avcodec/bink: Reorder operations in init to avoid memleak on error
+    
+    Fixes: Direct leak of 536 byte(s) in 1 object(s)
+    Fixes: 15266/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_BINK_fuzzer-5629530426834944
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Reviewed-by: Peter Ross <pross@xvid.org>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 2603f25d326476a83f5d093b522590b05b6e703b)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit f487aa964b4e4fcdea8ae2e899d31494ede8c3cd
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 13 01:20:19 2019 +0200
+
+    avformat/wtvdec: Avoid (32bit signed) sectors
+    
+    Fixes: left shift of negative value -14614752
+    Fixes: 15174/clusterfuzz-testcase-minimized-ffmpeg_DEMUXER_fuzzer-5670543606415360
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Reviewed-by: Peter Ross <pross@xvid.org>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit dd357d76e5faf3ce6fc46ffb924cf30f1cb54af9)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 0ccdabffd7890402a290b53ab3908bfbd4991f71
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Wed Jun 5 12:18:54 2019 +0200
+
+    avcodec/bitstream: Check for more conflicting codes in build_table()
+    
+    Fixes: out of array read
+    Fixes: 14563/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_AGM_fuzzer-5646451545210880
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit a7e3b271fc9a91c5d2e4df32e70e525c15c6d3ef)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit ec23fe0fd908e78b0bf23cf2b880dcb7a7c5640a
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Wed Jun 5 12:18:54 2019 +0200
+
+    avcodec/bitstream: Check for integer code truncation in build_table()
+    
+    Fixes: out of array read
+    Fixes: 14563/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_AGM_fuzzer-5646451545210880
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit e78b0f83748f92ea9e93b21c36082e0dd04d7cb1)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 837e9e8898f3110cc6328d35ca77eda4fc630820
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 6 23:20:49 2019 +0200
+
+    avformat/sbgdec: Fixes integer overflow in str_to_time() with hours
+    
+    Fixes: signed integer overflow: 904444 * 3600 cannot be represented in type 'int'
+    Fixes: 15113/clusterfuzz-testcase-minimized-ffmpeg_DEMUXER_fuzzer-5764083346833408
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 2a0f23b9d647ad84e0351b43ca4b552add00c8dc)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit e73ef454e89dcce85fbc8c12ccb5c6b73c7a343c
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 6 23:17:18 2019 +0200
+
+    avformat/vpk: Check offset for validity
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit aa003019ab9ec5ef7e7b3ff9d6262d3472b427eb)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit a2ebfb6afe9df2fa51d0ece0a205638fe6e1b832
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu Jun 6 23:14:13 2019 +0200
+
+    avformat/vpk: Fix integer overflow in samples_per_block computation
+    
+    Fixes: signed integer overflow: 84026453 * 28 cannot be represented in type 'int'
+    Fixes: 15111/clusterfuzz-testcase-minimized-ffmpeg_DEMUXER_fuzzer-5675630072430592
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 8c6c4129b4cc3b9e0b3a527a5a15c904ec6ae3b6)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 1a022c66c827d8f3192c6c1d1dca0c679b8cff92
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat Jun 1 19:06:07 2019 +0200
+
+    avcodec/mjpegdec: Check for non ls PAL8
+    
+    Fixes: Null-dereference READ in av_malloc
+    Fixes: 15002/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_THP_fuzzer-5643474625363968
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 442375fee7f1fb15e42fbc128dc38bdfcc2cc105)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit c4a14a630328b45d8b98309056d88563c7fef0c5
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun May 26 23:18:34 2019 +0200
+
+    avcodec/interplayvideo: check decoding_map_size with video_data_size
+    
+    Fixes: Timeout (90543 ms -> 59 ms)
+    Fixes: 14721/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_INTERPLAY_VIDEO_fuzzer-5697492148027392
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 914d6a7c1a7a1850b4053847a784b174c9146c55)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 66cbac4a0bdbb84b5f5eae4a5a821796e31623cf
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu May 23 23:17:35 2019 +0200
+
+    avcodec/h264_parse: Use 64bit for expectedpoc and expected_delta_per_poc_cycle
+    
+    Fixes: signed integer overflow: -2142516591 + -267814575 cannot be represented in type 'int'
+    Fixes: 14450/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_H264_fuzzer-5716105319940096
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Reviewed-by: James Almer <jamrial@gmail.com>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 4896fa18add7636ea9986edde51493331f1fb01e)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit f021c40c30564d08215d3014cd4ae336588c0b4a
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Tue May 14 14:29:43 2019 +0200
+
+    avcodec/mss4: Check input size against skip bits
+    
+    Fixes: Timeout (17sec -> 20ms)
+    Fixes: 14615/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_MTS2_fuzzer-5093007763701760
+    Fixes: 14797/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_MTS2_fuzzer-5651696119709696
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 0fef412dffb74fef3494f7fae0c138c32a444484)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 43afeaa08652543fd44f993001b2be01aca122a6
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Tue May 21 01:33:03 2019 +0200
+
+    avcodec/dxv: Check op_offset in dxv_decompress_cocg()
+    
+    Fixes: signed integer overflow: -2147483648 - 12 cannot be represented in type 'int'
+    Fixes: 14732/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_DXV_fuzzer-5735273129836544
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 8e520843dd76a644c019134ac7b17eba9f1118b3)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 04c3e3d4e257a7e46e7e699f5d26f849837f907d
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Wed May 22 02:01:33 2019 +0200
+
+    avcodec/diracdec: Fix integer overflow in global_mv()
+    
+    Fixes: signed integer overflow: 16384 * 196607 cannot be represented in type 'int'
+    Fixes: 14810/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_DIRAC_fuzzer-5091232683917312
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit a99ffb5bb4454c625748972d9389cfaa5433a342)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit eed8561f7cb845aa6df8daf4abf1945be18a4930
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Fri May 17 23:28:49 2019 +0200
+
+    avcodec/vmnc: Check available space against chunks before reget_buffer()
+    
+    Fixes: Timeout (16sec -> 60ms)
+    Fixes: 14673/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_VMNC_fuzzer-5640217517621248
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 279d9a84af37cc1a7cf79c1cd667105eeb948611)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 5fbc6dcdccf16996ce79f17f8c0ae37069447aed
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sat May 18 10:37:26 2019 +0200
+
+    avcodec/aacdec_template: skip apply_tns() if max_sfb is 0 (from previous header decode failure)
+    
+    Fixes: NULL pointer dereference
+    Fixes: 14723/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_AAC_LATM_fuzzer-5654612436058112
+    Fixes: 14724/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_AAC_LATM_fuzzer-5712607111020544
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit cf3156e762bbd3fbaf9da53f3ef1ea6d1bad2ec5)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 42245d49a4ad76b84e62aa1f7d2eca5b15534fbf
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu May 16 12:00:18 2019 +0200
+
+    avcodec/aacdec_fixed: Handle more extreem cases in noise_scale()
+    
+    Its unclear if these cases have any relevance in real files
+    
+    Fixes: shift exponent -2 is negative
+    Fixes: 14489/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_AAC_FIXED_fuzzer-5681941631729664
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 3d14663f8345a84613b1ec041fd65e4a90057320)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 11f5eb0f16378581171ca3068ea7e751947f43a7
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu May 16 11:55:43 2019 +0200
+
+    avcodec/aacdec_template: Merge 3 #ifs related to noise handling
+    
+    Fewer #if and fewer lines
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit bc33c99d56791fc26ccafb49512b59e38b99ca12)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit a527b49cb927fb1dcbb305b345479979a71e0478
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu May 16 11:03:59 2019 +0200
+
+    avcodec/aacdec_fixed: ssign seems always -1 in noise_scale(), simplify
+    
+    (cherry picked from commit 3d5863d73915748013975cac8d2148c5fc3d01c3)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 3760f17e9b867ea6f31b06899982714736816cf8
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Tue May 14 12:12:29 2019 +0200
+
+    avformat/mp3enc: Avoid SEEK_END as it is unsupported
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit bf3ee6a13053d37a0c5022a324624e89f0bce8c5)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 57e9b3cac1b646967ef4c228b1463338e403ee52
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun May 5 00:31:24 2019 +0200
+
+    avcodec/truemotion2: Fix several integer overflows in tm2_update_block()
+    
+    Fixes: signed integer overflow: -1877966852 + -469491713 cannot be represented in type 'int'
+    Fixes: 14561/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_TRUEMOTION2_fuzzer-5167608359288832
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 8eecf761a65baf4ce6f25c0a149819cc9414c0f0)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 75501f90fd203949903ba103e5f719e1530e1444
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu May 2 20:36:18 2019 +0200
+
+    avformat/webm_chunk: Specify expected argument length of get_chunk_filename()
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 1a74b04737f08e2e11a02ada280407889f6cadb1)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit fd05665f9c9997cc43275be1befe81806a1a79d1
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Thu May 2 20:45:14 2019 +0200
+
+    avformat/webm_chunk: Check header filename length
+    
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 3b5b977c9f96e2c3803317ad75253801bc571791)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+
+commit 7ffd2ae87eaa7cda08bdd14bd593c2911f959994
+Author: Michael Niedermayer <michael@niedermayer.cc>
+Date:   Sun May 19 17:42:04 2019 +0200
+
+    avcodec/cpia: Check input size also against linesizes and EOL
+    
+    Fixes: Timeout (14sec -> 29ms)
+    Fixes: 14733/clusterfuzz-testcase-minimized-ffmpeg_AV_CODEC_ID_CPIA_fuzzer-5707022445576192
+    
+    Found-by: continuous fuzzing process https://github.com/google/oss-fuzz/tree/master/projects/ffmpeg
+    Reviewed-by: Carl Eugen Hoyos <ceffmpeg@gmail.com>
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+    (cherry picked from commit 3c0bfa7d1a90a22d5fe8daa415cc689c111562f1)
+    Signed-off-by: Michael Niedermayer <michael@niedermayer.cc>
+</pre>

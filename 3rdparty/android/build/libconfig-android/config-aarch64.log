@@ -1,0 +1,147 @@
+configure: WARNING: if you wanted to set the --build type, don't use --host.
+    If a cross compiler is detected then cross compile mode will be used
+checking build system type... x86_64-pc-linux-android
+checking host system type... aarch64-unknown-linux-android
+checking target system type... aarch64-unknown-linux-android
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for aarch64-linux-android-strip... aarch64-linux-android-strip
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+configure: libconfig - made with pride in California
+checking for style of include used by make... GNU
+checking for aarch64-linux-android-gcc... aarch64-linux-android-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether aarch64-linux-android-gcc accepts -g... yes
+checking for aarch64-linux-android-gcc option to accept ISO C89... none needed
+checking dependency style of aarch64-linux-android-gcc... gcc3
+checking how to run the C preprocessor... aarch64-linux-android-gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by aarch64-linux-android-gcc... /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/aarch64-linux-android/bin/ld
+checking if the linker (/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/aarch64-linux-android/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/bin/aarch64-linux-android-nm -B
+checking the name lister (/home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/bin/aarch64-linux-android-nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-pc-linux-android file names to aarch64-unknown-linux-android format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-android file names to toolchain format... func_convert_file_noop
+checking for /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/aarch64-linux-android/bin/ld option to reload object files... -r
+checking for aarch64-linux-android-objdump... aarch64-linux-android-objdump
+checking how to recognize dependent libraries... pass_all
+checking for aarch64-linux-android-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for aarch64-linux-android-ar... aarch64-linux-android-ar
+checking for archiver @FILE support... @
+checking for aarch64-linux-android-strip... (cached) aarch64-linux-android-strip
+checking for aarch64-linux-android-ranlib... aarch64-linux-android-ranlib
+checking command to parse /home/andrei/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/bin/aarch64-linux-android-nm -B output from aarch64-linux-android-gcc object... ok
+checking for sysroot... no
+checking for aarch64-linux-android-mt... no
+checking for mt... mt
+configure: WARNING: using cross tools not prefixed with host triplet
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if aarch64-linux-android-gcc supports -fno-rtti -fno-exceptions... no
+checking for aarch64-linux-android-gcc option to produce PIC... -fPIC -DPIC
+checking if aarch64-linux-android-gcc PIC flag -fPIC -DPIC works... yes
+checking if aarch64-linux-android-gcc static flag -static works... no
+checking if aarch64-linux-android-gcc supports -c -o file.o... yes
+checking if aarch64-linux-android-gcc supports -c -o file.o... (cached) yes
+checking whether the aarch64-linux-android-gcc linker (/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/aarch64-linux-android/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for aarch64-linux-android-gcc... (cached) aarch64-linux-android-gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether aarch64-linux-android-gcc accepts -g... (cached) yes
+checking for aarch64-linux-android-gcc option to accept ISO C89... (cached) none needed
+checking dependency style of aarch64-linux-android-gcc... (cached) gcc3
+checking whether aarch64-linux-android-gcc and cc understand -c and -o together... yes
+checking whether we are using the GNU C++ compiler... yes
+checking whether aarch64-linux-android-g++ accepts -g... yes
+checking dependency style of aarch64-linux-android-g++... gcc3
+checking how to run the C++ preprocessor... aarch64-linux-android-g++ -E
+checking for ld used by aarch64-linux-android-g++... /home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/aarch64-linux-android/bin/ld
+checking if the linker (/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/aarch64-linux-android/bin/ld) is GNU ld... yes
+checking whether the aarch64-linux-android-g++ linker (/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/aarch64-linux-android/bin/ld) supports shared libraries... yes
+checking for aarch64-linux-android-g++ option to produce PIC... -fPIC -DPIC
+checking if aarch64-linux-android-g++ PIC flag -fPIC -DPIC works... yes
+checking if aarch64-linux-android-g++ static flag -static works... no
+checking if aarch64-linux-android-g++ supports -c -o file.o... yes
+checking if aarch64-linux-android-g++ supports -c -o file.o... (cached) yes
+checking whether the aarch64-linux-android-g++ linker (/home/andrei/hdd/tmp/android_3d/sview/3rdparty/android/build/android-toolchain-arm64/aarch64-linux-android/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for flex... no
+checking for lex... no
+*******************************************************************
+You do not seem to have flex. While flex is not required to build
+libconfig, you may need it to regenerate the lexer if you change
+the scanner.l file. Flex 2.5.33 or newer is recommended.
+*******************************************************************
+checking for bison... no
+checking for byacc... no
+*******************************************************************
+You do not seem to have bison. While bison is not required to build
+libconfig, you may need it to regenerate the parser if you change
+the grammar.y file.
+*******************************************************************
+checking for compiler switch to enable full C/C++ warnings... (cannot determine)
+checking for ANSI C header files... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking xlocale.h usability... yes
+checking xlocale.h presence... yes
+checking for xlocale.h... yes
+checking for an ANSI C-conforming const... yes
+checking for newlocale... yes
+checking for uselocale... yes
+checking for freelocale... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating lib/Makefile
+config.status: creating lib/libconfig.pc
+config.status: creating lib/libconfig++.pc
+config.status: creating doc/Makefile
+config.status: creating examples/Makefile
+config.status: creating examples/c/Makefile
+config.status: creating examples/c++/Makefile
+config.status: creating tinytest/Makefile
+config.status: creating tests/Makefile
+config.status: creating libconfig.spec
+config.status: creating ac_config.h
+config.status: ac_config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
