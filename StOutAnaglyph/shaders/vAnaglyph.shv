@@ -1,0 +1,19 @@
+/**
+ * Copyright © 2009-2010 Kirill Gavrilov <kirill@sview.ru>
+ *
+ * This code is licensed under MIT license (see docs/license-mit.txt for details).
+ */
+
+// per-vertex input
+attribute vec4 vVertex;
+attribute vec2 vTexCoord;
+
+// outs to fragment shader
+varying vec2 fTexCoord;
+
+void main(void) {
+    // just copy, pipeline interleave coordinates self
+    fTexCoord = vTexCoord;
+    // note - projection matrix not applied!
+    gl_Position = vVertex;
+}

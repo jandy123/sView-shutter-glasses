@@ -1,0 +1,32 @@
+/**
+ * iZ3D backScreen fragment shader.
+ * Copyright © 2007-2008 iZ3D LLC
+ * Copyright © 2007-2010 Kirill Gavrilov <kirill@sview.ru>
+ *
+ * This code is licensed under MIT license (see docs/license-mit.txt for details).
+ */
+
+// it is always better to store variables in vectors
+vec3 vecMult = vec3(2.2, 1.0/2.2, 0.5);
+
+// process power operation for rgb components
+vec4 POW3(vec4 v, float m) {
+    return vec4(pow(abs(v.r), m), pow(abs(v.g), m), pow(abs(v.b), m), 0.0);
+}
+
+uniform sampler2D texL, texR;
+varying vec2 fTexCoord;
+void main(void) {
+    vec4 colorL = texture2D(texL, fTexCoord); // got the Left texture
+    vec4 colorR = texture2D(texR, fTexCoord); // got the Right texture
+
+    colorL = POW3(colorL, vecMult.x); // firstly process normalize
+    colorR = POW3(colorR, vecMult.x);
+
+    vec4 color = colorL + colorR; // summ
+
+    color *= vecMult.z;
+    color = POW3(color, vecMult.y);
+
+    gl_FragColor = color;
+}

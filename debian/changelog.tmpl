@@ -1,0 +1,198 @@
+sview (unknown_version) unknown_distrib; urgency=low
+
+  + Added Traditional Chinese translation.
+  + Added smoothed (optimized) output option for interlaced stereoscopic displays (improves small text readability).
+  + Added handling of deep color (30-bit RGB) (when enabled in Xorg configurations).
+
+ -- Kirill Gavrilov <kirill@sview.ru>  unknown_date
+
+sview (1:20.08-1~unknown_distrib) unknown_distrib; urgency=low
+
+  + Support displaying of equiangular cubemap.
+  + Hide GUI immediatly on ~ hotkey.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Sat, 20 Aug 2020 20:00:00 +0300
+
+sview (1:20.05-1~unknown_distrib) unknown_distrib; urgency=low
+
+  + Added Spanish translation files.
+  + Image Viewer - added trilinear texture filtering option generating mip-maps.
+  + Image Viewer - support 1x6 cubemap layout.
+  + Image Viewer - panorama is now automatically enabled for JPEG files with GPano:ProjectionType tag.
+  + Image Viewer - panorama is now automatically enabled for JPEG files with 360Stereo/360Mono tags (game screenshots).
+  + Image Viewer - support DDS-packed cubemaps.
+  + Movie Player - image-based subtitles size can be now adjusted.
+  * Movie Player - workaround subtitles seeking issues for attached SRT files.
+  * Movie Player - fixed ASS subtitles formatting issue on files without closure tags.
+  * Movie Player - added handling of image-based subtitles encoded as stereoscopic pair (side-by-side).
+  * Image Viewer - fixed poor quality on saving JPEG (yuv420p) image into PNG (rgb).
+  * Image Viewer - fixed displaying WebP images with alpha channel (yuva pixel formats).
+  * fontconfig library is now used to retrieve paths to system fonts on Linux.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Wed, 20 May 2020 15:25:33 +0300
+
+sview (1:19.08-2~unknown_distrib) unknown_distrib; urgency=low
+
+  + Support VR180 hemisphere and cylindrical panorama inputs.
+  * Minor corrections/improvements.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Sun, 04 Aug 2019 20:00:00 +0300
+
+sview (17.10-1~unknown_distrib) unknown_distrib; urgency=low
+
+  + Image Viewer - display Slideshow delay parameter in Settings dialog.
+  + Movie Player - add general information about the stream (bitrate, codec, PAR, DAR) in File Info dialog.
+  * Movie Player - fix seeking to the very beginning of the file.
+  * Movie Player - fix (workaround) displaying attached image within some mp3 files.
+  * Fix text rendering artifacts when using glyphs with kerning defined.
+  * Fix compilation on glibc 2.26+ (Ubuntu 17.10+)
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Mon, 23 Oct 2017 22:29:34 +0300
+
+sview (17.04-1~unknown_distrib) unknown_distrib; urgency=low
+
+  + Movie Player - add audio positioning while playing spheric panorama video.
+  + Movie Player - handle rotation info stored within video stream.
+  + Image Viewer, Movie Player - add overlay control for adjusting image color
+  + Movie Player - add option to force HRTF mixing in OpenAL Soft.
+  * Fix saving PNG images when using up-to-date FFmpeg.
+  * Image Viewer, Movie Player - fix too slow opening File Info dialog in case of long metadata.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Sun, 16 Apr 2017 21:45:20 +0300
+
+sview (16.04-1~unknown_distrib) unknown_distrib; urgency=low
+
+  + Movie Player - implement GPU-accelerated conversion of NV12 and XYZ12 formats.
+  + Image Viewer - put original filename into save file dialog.
+  + Image Viewer - include metadata read by FFmpeg in file info dialog.
+  + Support list of files within Drag & Drop. Two files are handled as stereo pair.
+  + Movie Player - support extended remote control from command line.
+  * Movie Player - fix saving playback time of recent file.
+  * Movie Player - fix tracking playback state for keeping screen on.
+  * Improve language change without application restart.
+  * Prevent creation of multiple modal dialogs.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Sun, 01 May 2016 11:44:31 +0300
+
+sview (15.10-1~unknown_distrib) unknown_distrib; urgency=low
+
+  + Support reading cubemaps in format 3:2 (two rows per 3 quad sides).
+  + Add panorama icon to toolbar.
+  + Add Czech translation files.
+  * Improve handling of recent files when file has been selected within automatically generated playlist.
+  * Add option to automatically workaround aspect ratio of anamorphic videos (turned on by default).
+  * Improve settings processing on Linux and Android - eliminate redundant file store/restore operations and add recovery for broken files.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Sun, 04 Oct 2015 19:52:13 +0300
+
+sview (15.08-1~unknown_distrib) unknown_distrib; urgency=low
+
+  + Support Cubemap images (6 sides of the cube stacked horizontally).
+  + Add hot-keys configuration dialog.
+  + Movie Player - add volume bar, shuffle/loop buttons.
+  * Update User Interface - more compact interface, new icons in menu, add scrollbars, improved HiDPI support.
+  * Improve integration into Ubuntu - fix missing icons on taskbar.
+  * Multiple fixes.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Sat, 22 Aug 2015 11:19:18 +0300
+
+sview (14.01-7~unknown_distrib) unknown_distrib; urgency=low
+
+  + Movie Player - switch to new audio/subtitles track right after attachment.
+  + Movie Player - preliminary support of image-based subtitles.
+  + Movie Player - process trivial HTML formatting tags (<b> and <i>) in text subtitles.
+  + Movie Player - copy shown subtitle text to the clipboard on Ctrl + C.
+  + Movie Player - automatically attach audio/subtitles tracks from files with similar name.
+  + Image Viewer - parse/save _JPSJPS_ extension section in JPEG files.
+  + Image Viewer - show stereoscopic metadata issues (missing, mismatch) in File Info dialog.
+  + Added support for new stereo3d API in FFmpeg.
+  * Improved and extended information provided by File Info dialog.
+  * Image Viewer - read pixel aspect ratio property from image, when available.
+  * Image Viewer - handle MPO files with big thumbnails (load full images).
+  * Image Viewer - improved JPEG parser robustness.
+  * Movie Player - fixed playback of 5.0 and 7.1 audio streams.
+  * Define Oculus Rift as dedicated device to simplify configuration.
+  * Fix text characters positioning issue (displacement at second+ displaying time).
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Sat, 21 Jun 2014 17:43:11 +0400
+
+sview (13.10-4~unknown_distrib) unknown_distrib; urgency=low
+
+  + Linux, XLib - read Xft.dpi property to scale interface appropriately.
+  + Added option to scale GUI.
+  + Movie Player - added subtitles font size control.
+  + Movie Player - new Audio/Video synchronization control.
+  + Movie Player, Web UI - added audio volume control
+  + Distorted Output, Dual Output - added option to display Mono sources in Stereo.
+  + Added icons for source format menu items
+  * Display dual-stream video as stereo only when chosen "Autodetection" source format.
+  * Fixed memory corruption on deletion of last item in playlist (file deletion).
+  ^ Accelerate high-range planar YUV (9/10/16 bits per component) to RGB color conversion (using GLSL).
+  ^ Optimized font initialization time and GPU memory usage.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Thu, 17 Oct 2013 20:58:32 +0400
+
+sview (13.06-1~unknown_distrib) unknown_distrib; urgency=low
+
+  + Movie Player - added menu with recently played files.
+  + Movie Player - added hot keys to switch subtitles ('T') and audio treks ('L').
+  + Movie Player - read stereoscopic tags from WMV files.
+  + Added Distorted output for anamorphic side-by-side, over/under outputs.
+  + Added Over / Under output mode.
+  * Fixed XRandr compatibility issues.
+  * Display FPS meter widget inside window instead of window title.
+  * Dual Output - extend single window in fullscreen mode when possible to improve synchronization.
+  * Improved libraries packaging.
+  * Keep file playback during output device change.
+  * Do not create depth buffer when there is no need in it (slightly reduce GPU memory usage).
+  * Keyboard input handling improvements.
+  * Improved message box widget - added Close button.
+  * Do not append m3u files to playlist.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Sat, 15 Jun 2013 11:19:44 +0400
+
+sview (13.01-1~unknown_distrib) unknown_distrib; urgency=low
+
+  + Adjust stereo separation within '<' and '>' keys to cover notebook keyboards.
+  + Use undo/redo buffer to keep played items order in shuffle mode.
+  + Detect display(s) reconfiguration during application work (to correctly launch full-screen mode).
+  + Movie Player - added new option to prevent system going to sleep during playback.
+  + Movie Player - handle Audio device disconnection during application work.
+  + Show dirty information about opened file by 'I' hot-key.
+  * Shuffle playback - generate random order rather than the same pseudo-random order.
+  * Movie Player - fixed seeking in paused state.
+  * Movie Player - fixed switching between audio streams with different frequency.
+  * Fixed saving of BMP image in PNG format.
+  * Fixed displaying of stereo images with different dimensions per view.
+  * Workaround bugs in some drivers (Catalyst) when window content doesn't redrawn after switching back from full-screen mode.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Tue, 15 Jan 2013 22:13:51 +0400
+
+sview (12.09-1~unknown_distrib) unknown_distrib; urgency=low
+
+  + Added audio gain control.
+  + Setup icon for sView window.
+  + Interlace output - added option to disable binding to compatible monitor at application start.
+  + Dual output - added menu for slave monitor selection.
+  + Show Display Aspect Ratio in Image Viewer too.
+  + Preliminary support for reading playlist in M3U format.
+  * Improved backward seeking in movie player.
+  * Switch audio device (OpenAL) without application restart.
+  * Image Viewer - reduce FPS for inactive window.
+  * Removed dependency from patched FTGL.
+  * Improved text layout.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Sun, 16 Sep 2012 18:34:46 +0400
+
+sview (12.06-1~unknown_distrib) unknown_distrib; urgency=low
+
+  * Movie player - fixed incorrect program termination in some scenarios.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Wed, 06 Jun 2012 20:43:25 +0400
+
+sview (12.05-1~unknown_distrib) unknown_distrib; urgency=low
+
+  * Initial Release.
+
+ -- Kirill Gavrilov <kirill@sview.ru>  Sun, 13 May 2012 17:08:50 +0400
+

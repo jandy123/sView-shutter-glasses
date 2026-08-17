@@ -1,0 +1,18 @@
+# French translation file for StOutInterlace library
+# @author gramoun for Kirill Gavrilov
+--------
+1000=Lignes entrelacées
+1001=Ecrans entrelacés par lignes: Zalman, Hyundai,...
+1002=Colonnes entrelacées
+1003=Ecrans entrelacés par colonnes
+1006=DLP TV (échiquier)
+1007=DLP TV (échiquier)
+1008=Interlaced ED
+1009=EDimensional en mode entrelacé
+1102=Inverser l'ordre
+1103=Lier à écran supporté
+?1104=Use texture mask (compatibility)
+?1105=Smoothing
+2000=sView - Interlaced Output module
+2001=version
+2002=© {0} Kirill Gavrilov Tartynskih <{1}>\nSite Officiel: {2}

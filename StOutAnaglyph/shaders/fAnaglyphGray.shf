@@ -1,0 +1,31 @@
+/**
+ * Gray Anaglyph fragment shader.
+ * Copyright © 2007-2011 Kirill Gavrilov <kirill@sview.ru>
+ *
+ * This code is licensed under MIT license (see docs/license-mit.txt for details).
+ */
+
+/**
+ * We use luminance vector (0.3086, 0.6094, 0.0820) here to convert image to grayscale.
+ * Notice here that we do not use the standard NTSC weights of 0.299, 0.587, and 0.114.
+ * The NTSC weights are only applicable to RGB colors in a gamma 2.2 color space.
+ * For linear RGB colors the values above are better.
+ */
+const mat4 multL = mat4(0.3086,      0,      0,      0,
+                        0.6094,      0,      0,      0,
+                        0.0820,      0,      0,      0,
+                             0,      0,      0,      0);
+const mat4 multR = mat4(     0, 0.3086, 0.3086,      0,
+                             0, 0.6094, 0.6094,      0,
+                             0, 0.0820, 0.0820,      0,
+                             0,      0,      0,      0);
+
+uniform sampler2D texL, texR;
+varying vec2 fTexCoord;
+
+void main(void) {
+    vec4 colorL = texture2D(texL, fTexCoord);
+    vec4 colorR = texture2D(texR, fTexCoord);
+
+    gl_FragColor = multL * colorL + multR * colorR;
+}

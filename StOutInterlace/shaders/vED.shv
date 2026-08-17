@@ -1,0 +1,9 @@
+/**
+ * Copyright © 2009 Kirill Gavrilov <kirill@sview.ru>
+ *
+ * This code is licensed under MIT license (see docs/license-mit.txt for details).
+ */
+
+void main(void) {
+    gl_Position = ftransform();
+}

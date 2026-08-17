@@ -1,0 +1,30 @@
+/**
+ * True (dark) Anaglyph fragment shader.
+ * Copyright © 2007-2010 Kirill Gavrilov <kirill@sview.ru>
+ *
+ * This code is licensed under MIT license (see docs/license-mit.txt for details).
+ */
+
+/**
+ * - Dark image
+ * - No color reproduction
+ * - Little ghosting
+ */
+const mat4 multL = mat4(0.299,     0,     0,     0,
+                        0.587,     0,     0,     0,
+                        0.114,     0,     0,     0,
+                            0,     0,     0,     0);
+const mat4 multR = mat4(    0,     0, 0.299,     0,
+                            0,     0, 0.587,     0,
+                            0,     0, 0.114,     0,
+                            0,     0,     0,     0);
+
+uniform sampler2D texL, texR;
+varying vec2 fTexCoord;
+
+void main(void) {
+    vec4 colorL = texture2D(texL, fTexCoord);
+    vec4 colorR = texture2D(texR, fTexCoord);
+
+    gl_FragColor = multL * colorL + multR * colorR;
+}

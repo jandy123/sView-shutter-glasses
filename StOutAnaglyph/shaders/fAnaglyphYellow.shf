@@ -1,0 +1,19 @@
+/**
+ * Simple Yellow Anaglyphs fragment shader.
+ * Copyright © 2007-2010 Kirill Gavrilov <kirill@sview.ru>
+ *
+ * This code is licensed under MIT license (see docs/license-mit.txt for details).
+ */
+
+uniform sampler2D texL, texR;
+varying vec2 fTexCoord;
+
+void main(void) {
+    vec4 colorL = texture2D(texL, fTexCoord);
+    vec4 colorR = texture2D(texR, fTexCoord);
+
+    colorL.b = 0.0;
+    colorR.r = 0.0;
+    colorR.g = 0.0;
+    gl_FragColor = colorL + colorR;
+}

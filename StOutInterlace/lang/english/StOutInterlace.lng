@@ -1,0 +1,18 @@
+# English translation file for StOutInterlace library
+# @author Kirill Gavrilov
+--------
+1000=Row Interlaced
+1001=Row interlaced displays: Zalman, Hyundai,...
+1002=Column Interlaced
+1003=Column interlaced displays
+1006=DLP TV (chessboard)
+1007=DLP TV (chessboard)
+1008=Interlaced ED
+1009=EDimensional in interlaced mode
+1102=Reverse Order
+1103=Bind to supported monitor
+1104=Use texture mask (compatibility)
+1105=Smoothing
+2000=sView - Interlaced Output module
+2001=version
+2002=© {0} Kirill Gavrilov Tartynskih <{1}>\nOfficial site: {2}
