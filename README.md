@@ -14,7 +14,7 @@ To be updated...
 Check out the prerequisites for sView and make sure that they are installed. Once this is done, just type `make` to build the application and `make install` to install it under `/usr/local/`.
 
 ##### Android
-Execute the script `andy_build_android.sh` under `./contuinuousIntegration`. I assume a linux machine is used to build the android apk.
+Execute the script `andy_build_android.sh` under `./continuousIntegration`. I assume a linux machine is used to build the android apk.
 
 ##### Windows
 Help needed, since I do not use.
