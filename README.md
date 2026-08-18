@@ -6,6 +6,19 @@
 A pre-built android app is available for download, see the current pre-release. The app should work on Android 13 and 16 and has been tested on Samsung S20 and S26 Ultra. The IR emitter has to be connected to the phone/tablet via a USB-A to USB-C (OTG) adapter. The emitter firmware, modified for Panasonic glasses and for dealing with ghosting can be found also under Releases. The modified code of the emitter firmware can be found here: [RP2040-3D-Vision-Emitter-sView](https://github.com/jandy123/RP2040-3D-Vision-Emitter-sView/tree/main).
 
 #### Setup
+
+##### Android
+
+* Once the app is installed and the USB emitter attached, start the app (either sView Image Viewer or sView Media player), accept permissions, access to USB device, etc.
+* Go to Menu and select Settings. In Settings:
+  * Modify "Change device": "Anaglyph glasses" to "Shutter glasses". An error will pop-up, accept close.
+* Go to Menu and select Settings. In Settings:
+  * Check "Show extra options". An error will pop-up, accept close.
+* Go to Menu and select Settings. In Settings:       
+  * Modify "Quad Buffer type": "OpenGL Hardware" to "OpenGL Emulated".
+* Finally, open some media file, change maybe the output type to "Stereo" and play.
+* One media plays, glasses synchronization can be adjusted by clicking the right-most option on the OSD and changing the value of the slider "Render delay". Ideally, you would get stable, ghost-free 3D experience :).     
+      
 To be updated...
 
 #### Building
