@@ -6,8 +6,18 @@
 A pre-built android app is available for download, see the current pre-release. The app should work on Android 13 and 16 and has been tested on Samsung S20 and S26 Ultra. The IR emitter has to be connected to the phone/tablet via a USB-A to USB-C (OTG) adapter.  
 
 #### Setup
+To be updated...
 
 #### Building
+
+##### Linux
+Check out the prerequisites for sView and make sure that they are installed. Once this is done, just type `make` to build the application and `make install` to install it under `/usr/local/`.
+
+##### Android
+Execute the script `andy_build_android.sh` under `./contuinuousIntegration`. I assume a linux machine is used to build the android apk.
+
+##### Windows
+Help needed, since I do not use.
 
 #### Credits
 
@@ -15,5 +25,3 @@ A pre-built android app is available for download, see the current pre-release. 
 * RP2040-3D-Vision-Emitter by NTM-3D, see https://github.com/NTM-3D/RP2040-3D-Vision-Emitter
 * 3DJ ThreeDeeJay, see https://github.com/ThreeDeeJay/sview/tree/master?tab=readme-ov-file
 
-  
-To be updated...
