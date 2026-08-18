@@ -25,6 +25,7 @@ Help needed, since I do not use.
 * RP2040-3D-Vision-Emitter by NTM-3D, see https://github.com/NTM-3D/RP2040-3D-Vision-Emitter
 * libnvstusb by eruffaldi, see https://github.com/eruffaldi/libnvstusb
 * libusb, see https://github.com/libusb/libusb
+* Various other libraries and software packages used by sView.
 * Peter of open3doled, see https://github.com/open3doled/open-3d-oled
 * 3DJ ThreeDeeJay, see https://github.com/ThreeDeeJay/sview/tree/master?tab=readme-ov-file
 
