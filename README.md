@@ -21,7 +21,6 @@ Help needed, since I do not use.
 
 #### TODO
 * Currently the code is very experimental; a lot of code cleanup and refactoring has to be done.
-* Merge with current sView version.
 * Improve the building system; currently all binary tools and required libraries for building sView for android are shipped within this repository.
 * Allow choices for refresh rate, glasses, delay parameter, etc., via the sView GUI and apss them to the emitter firmware. This will require a lot of modifications of the emitter firmware.
 * Merge with current sView version. Probably this will be a lot of work due to the above...
