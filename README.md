@@ -16,8 +16,8 @@ A pre-built android app is available for download, see the current pre-release. 
   * Check "Show extra options". An error will pop-up, accept close.
 * Go to Menu and select Settings. In Settings:       
   * Modify "Quad Buffer type": "OpenGL Hardware" to "OpenGL Emulated".
-* Finally, open some media file, change maybe the output type to "Stereo" and play.
-* One media plays, glasses synchronization can be adjusted by clicking the right-most option on the OSD and changing the value of the slider "Render delay". Ideally, you would get stable, ghost-free 3D experience :).     
+* Finally, open some 3D media file, change maybe the output type to "Stereo" and play.
+* One 3D media plays, glasses synchronization can be adjusted by clicking the right-most option on the OSD and changing the value of the slider "Render delay". Ideally, you would get stable, ghost-free 3D experience :).     
       
 To be updated...
 
