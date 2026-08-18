@@ -23,5 +23,8 @@ Help needed, since I do not use.
 
 * sView by Kirill Gavrilov Tartynskih, see https://sview.ru/en/
 * RP2040-3D-Vision-Emitter by NTM-3D, see https://github.com/NTM-3D/RP2040-3D-Vision-Emitter
+* libnvstusb by eruffaldi, see https://github.com/eruffaldi/libnvstusb
+* libusb, see https://github.com/libusb/libusb
+* Peter of open3doled, see https://github.com/open3doled/open-3d-oled
 * 3DJ ThreeDeeJay, see https://github.com/ThreeDeeJay/sview/tree/master?tab=readme-ov-file
 
