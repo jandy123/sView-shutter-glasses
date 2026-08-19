@@ -37,7 +37,7 @@
 
 //phase-lock asus: phase: 150, frame 570
 //phase-lock aoc: phase 6200, frame 7200
-static int delay = 130; //asus: 130; aoc 1600 at 100hz (140 at 120hz)
+static int delay = 0; //asus: 130; aoc 1600 at 100hz (140 at 120hz)
 
 namespace {
 
@@ -1130,7 +1130,7 @@ void StOutPageFlip::processEvents() {
     if(aKeys.isKeyDown( ST_VK_A )) {
       delay -= 10;
       if(delay<0) delay = 0;
-      printf("nvstusb: eye swap delay: %d\n", delay);
+      printf("nvstusb: eye swap delay: %d\n", delay);      
       if(ctx != 0)
 	nvstusb_set_delay(ctx, delay);
       aKeys.keyUp(ST_VK_A, aKeys.getKeyTime(ST_VK_A));
@@ -1433,7 +1433,11 @@ void StOutPageFlip::stglDraw() {
     #endif
         default: {
 	  //LUK: taken out for android; done in framecallback
-#if !defined(__ANDROID__)	  
+#if !defined(__ANDROID__)
+	  //LUK: if the delay was modified with keys Shift+A/S,
+	  //skip this and use that delay value
+	  if(delay == 0)
+	    nvstusb_set_delay(ctx, getDelay() * 10000);
 	  stglDrawAggressive(ST_DRAW_LEFT);
 	  stglDrawAggressive(ST_DRAW_RIGHT);
 #endif	  
