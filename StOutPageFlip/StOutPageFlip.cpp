@@ -1436,7 +1436,7 @@ void StOutPageFlip::stglDraw() {
 #if !defined(__ANDROID__)
 	  //LUK: if the delay was modified with keys Shift+A/S,
 	  //skip this and use that delay value
-	  if(delay == 0)
+	  if(delay == 0 && ctx != 0)
 	    nvstusb_set_delay(ctx, getDelay() * 10000);
 	  stglDrawAggressive(ST_DRAW_LEFT);
 	  stglDrawAggressive(ST_DRAW_RIGHT);
